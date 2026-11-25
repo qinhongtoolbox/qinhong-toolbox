@@ -493,7 +493,7 @@
           <span class="no">1</span>
           <div>
             <h3>下载安装包</h3>
-            <p>点本页任意一个下载按钮，拿到 <code>youlong-shield.apk</code>。用浏览器下载最稳，下完先核对大小：<b>24.6 MB</b>（25,836,664 字节），对上了再装。</p>
+            <p>点本页任意一个下载按钮，输入卡密验证通过后，就会开始下载 <code>youlong-shield.apk</code>。用浏览器下载最稳，下完先核对大小：<b>24.6 MB</b>（25,836,664 字节），对上了再装。</p>
           </div>
         </article>
         <article class="glass step">
@@ -603,6 +603,78 @@
     a.setAttribute("href", DOWNLOAD_URL);
     a.setAttribute("download", DOWNLOAD_NAME);
   });
+</script>
+
+<style>
+.km-overlay{position:fixed;inset:0;background:rgba(20,30,40,.45);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:999;padding:18px}
+.km-overlay.open{display:flex}
+.km-card{background:rgba(255,255,255,.82);backdrop-filter:blur(22px) saturate(1.5);-webkit-backdrop-filter:blur(22px) saturate(1.5);border:1px solid rgba(255,255,255,.7);border-radius:26px;box-shadow:0 24px 60px rgba(15,45,70,.28);max-width:400px;width:100%;padding:30px 26px 24px;text-align:center;color:#17303c}
+.km-card h3{margin:0 0 6px;font-size:21px}
+.km-card p{margin:0 0 16px;font-size:13.5px;color:#5a7180;line-height:1.6}
+.km-input{width:100%;box-sizing:border-box;font-size:19px;letter-spacing:2px;text-align:center;padding:14px 10px;border-radius:14px;border:1.5px solid rgba(23,90,110,.25);background:rgba(255,255,255,.9);color:#17303c;text-transform:uppercase;outline:none}
+.km-input:focus{border-color:#2b7f9e}
+.km-err{min-height:20px;font-size:13px;color:#c0392b;margin:10px 0 4px}
+.km-go{width:100%;padding:14px;border:none;border-radius:14px;background:linear-gradient(135deg,#2f8fb3,#1f6f8f);color:#fff;font-size:16px;font-weight:600;cursor:pointer}
+.km-go:active{transform:scale(.98)}
+.km-cancel{margin-top:12px;background:none;border:none;color:#5a7180;font-size:14px;cursor:pointer}
+.km-shake{animation:kmshake .4s}
+@keyframes kmshake{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+.km-ok{font-size:15px;color:#1e7d46;line-height:1.7}
+</style>
+<div class="km-overlay" id="kmOverlay" role="dialog" aria-modal="true">
+  <div class="km-card" id="kmCard">
+    <h3>输入卡密下载</h3>
+    <p>秦红工具箱需凭卡密下载。把你拿到的卡密输进来，验证通过就开始下载——同一张卡密也能在 App 里激活软件。</p>
+    <input class="km-input" id="kmInput" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="19" autocomplete="off" spellcheck="false">
+    <div class="km-err" id="kmErr"></div>
+    <button class="km-go" id="kmGo">验证并下载</button>
+    <br><button class="km-cancel" id="kmCancel">取消</button>
+    <p style="margin-top:14px;font-size:12.5px">没有卡密？找创作者 <b>秦红</b> 领取。</p>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY_HASHES = ["6451a7af4316a71dac9b83f46922dab8606c60087dafd8828ed074141320c2b5", "1769ba9aaf09e9a02c2c10da092c79a98df3d28ecf336502021c046e67851b5a", "3fd50c2cb97cbc88439f99e7e6fc33daa65f67056b37e6270647def7eccedc08", "ba5b891bba11d34ddb846a9cc04755ef1d28da7b7c6d158afdc2e149339b11fe", "5cd00cd17032a0d4a37afe18581f15992327ffdd2859769e2d27f6b41e2f0906", "6e977a260a901269b1ce7f27e040c8b6294e0113d33a77f59bf417fb68d3fafd", "f5e29071544928f976edc7b3ed688082a6f1da8ae801c3f0e30fbb3c85d1a72c", "e561cca9d6e781a3d194eaa2e1df6f0f10e05431a776756dfd2c31c4954da186", "e69c2a3f65259d785f3e034ed2335e5e4caee1c06ff30b65fb0433e035aa3a7d", "8d650cae16e9cfc6d287a21557f49e6eee1aa9a8ee3d50adfee3f735c7e64860", "383a4e31c88f28a6c5ca1b602b7af85c7011d38e6007c46bea84ca2e10a3d63b", "6b5112eeec8593f2c44722e155d1c5e023e654a9758576774c62807c6e3e96e7", "0599930127e40e48f7fc40c7e64f1ce9b10701d8c9c6be19614b74393e788b61", "d93f34c44f2d29733d406dcf6845a64a9d59c87dc911395c0d2d23af3d4bcbbf", "ce276922e7457a0426dba1f9172f37dd6e90e9b506b09843c1809d95e91a9667", "d5f223b595e3ae629751760389bd90ccf0cd735a5bfbde04425bd27c2aec4665", "9a428f333e61c9d86db8a3115e84788b29362f38725bf681940b2f34e4e9dda4", "d4be836f95354b59ea8e4df17759821e20c0cb89682c8ae918054e5f3b659c3e", "aa1fa10992a2ef9a0e3e581a115a35a647a119a1fd5a56a59817a6cec784fb1b", "d61f7ba5e6d5c375b365df8f20fa514ca64fe07a3581363e1778124dbdfcc072"];
+  var overlay = document.getElementById('kmOverlay');
+  var input = document.getElementById('kmInput');
+  var err = document.getElementById('kmErr');
+  var card = document.getElementById('kmCard');
+  function openGate(){ overlay.classList.add('open'); err.textContent=''; setTimeout(function(){ input.focus(); }, 60); }
+  function closeGate(){ overlay.classList.remove('open'); }
+  document.querySelectorAll('.dl-btn').forEach(function(btn){
+    btn.addEventListener('click', function(ev){ ev.preventDefault(); openGate(); });
+  });
+  document.getElementById('kmCancel').addEventListener('click', closeGate);
+  overlay.addEventListener('click', function(ev){ if(ev.target === overlay) closeGate(); });
+  input.addEventListener('input', function(){
+    var v = input.value.toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,16);
+    input.value = v.replace(/(.{4})(?=.)/g, '$1-');
+  });
+  function startDownload(){
+    var a = document.createElement('a');
+    a.href = 'youlong-shield.apk';
+    a.setAttribute('download', 'youlong-shield.apk');
+    document.body.appendChild(a); a.click(); a.remove();
+  }
+  async function sha256hex(text){
+    var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+    return Array.from(new Uint8Array(buf)).map(function(b){ return b.toString(16).padStart(2,'0'); }).join('');
+  }
+  document.getElementById('kmGo').addEventListener('click', async function(){
+    var key = input.value.toUpperCase().replace(/[^A-Z0-9]/g,'');
+    if(key.length !== 16){ err.textContent = '卡密是 16 位，请输完整。'; return; }
+    var h = await sha256hex(key);
+    if(KEY_HASHES.indexOf(h) >= 0){
+      err.textContent = '';
+      card.innerHTML = '<div class="km-ok">验证通过，下载已经开始。<br>下完核对大小 24.6 MB，点开安装；<br>打开 App 后用同一张卡密激活。</div>';
+      startDownload();
+      setTimeout(closeGate, 2600);
+    } else {
+      err.textContent = '卡密不对，请检查有没有输错，或找创作者领取。';
+      card.classList.remove('km-shake'); void card.offsetWidth; card.classList.add('km-shake');
+    }
+  });
+})();
 </script>
 </body>
 </html>
