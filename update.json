@@ -1,1 +1,1 @@
-{"downloadUrl":"https://qinhongtoolbox.github.io/qinhong-toolbox/","latestVersionCode":23,"message":"秦红工具箱 v1.22 已发布：这一版主打流畅，首页深修不再卡顿，布局也修补整齐了，还有游戏帧率监测上线。旧版本请升级后继续使用。","minVersionCode":22}
+{"downloadUrl":"https://qinhongtoolbox.github.io/qinhong-toolbox/","latestVersionCode":24,"message":"秦红工具箱 v1.23 已发布：找到首页点不动的真凶——盖在首页上的点击特效层把触摸全截走了，已彻底删除；首页全部重写为一张干净列表，滑动点按都顺。旧版本请升级后继续使用。","minVersionCode":23}
