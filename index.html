@@ -324,6 +324,7 @@
       <a class="btn btn-white btn-big" href="#howto">看看怎么用
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
       </a>
+      <a class="btn btn-white btn-big dl-btn32" href="youlong-shield-32.apk" download="youlong-shield-32.apk">下载 32 位版</a>
     </div>
     <div class="hero-meta">
       <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>全程约 1 分钟</span>
@@ -573,11 +574,12 @@
     <div class="wrap">
       <div class="glass final">
         <h2>现在就装上，让它替你守着</h2>
-        <p>v1.12.0-study · 24.6 MB · Android 11+（arm64）· 覆盖安装不丢数据</p>
+        <p>v1.12.0-study · 64 位 24.6 MB / 32 位 24.4 MB · Android 11+ · 覆盖安装不丢数据</p>
         <a class="btn btn-primary btn-big dl-btn" href="youlong-shield.apk" download="youlong-shield.apk">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 21h16"/></svg>
           免费下载 v1.12
         </a>
+        <div style="margin-top:12px"><a class="btn btn-white dl-btn32" href="youlong-shield-32.apk" download="youlong-shield-32.apk">下载 32 位版（老手机 / 32 位虚拟机）</a></div>
       </div>
     </div>
   </section>
@@ -641,8 +643,10 @@
   var card = document.getElementById('kmCard');
   function openGate(){ overlay.classList.add('open'); err.textContent=''; setTimeout(function(){ input.focus(); }, 60); }
   function closeGate(){ overlay.classList.remove('open'); }
-  document.querySelectorAll('.dl-btn').forEach(function(btn){
-    btn.addEventListener('click', function(ev){ ev.preventDefault(); openGate(); });
+  var pendingFile = 'youlong-shield.apk';
+  var pendingSize = '24.6 MB';
+  document.querySelectorAll('.dl-btn, .dl-btn32').forEach(function(btn){
+    btn.addEventListener('click', function(ev){ ev.preventDefault(); pendingFile = btn.getAttribute('href') || 'youlong-shield.apk'; pendingSize = pendingFile.indexOf('32') >= 0 ? '24.4 MB' : '24.6 MB'; openGate(); });
   });
   document.getElementById('kmCancel').addEventListener('click', closeGate);
   overlay.addEventListener('click', function(ev){ if(ev.target === overlay) closeGate(); });
@@ -652,8 +656,8 @@
   });
   function startDownload(){
     var a = document.createElement('a');
-    a.href = 'youlong-shield.apk';
-    a.setAttribute('download', 'youlong-shield.apk');
+    a.href = pendingFile;
+    a.setAttribute('download', pendingFile);
     document.body.appendChild(a); a.click(); a.remove();
   }
   async function sha256hex(text){
@@ -667,7 +671,7 @@
     var h = await sha256hex(key);
     if(KEY_HASHES.indexOf(h) >= 0){
       err.textContent = '';
-      card.innerHTML = '<div class="km-ok">验证通过，下载已经开始。<br>下完核对大小 24.6 MB，点开安装；<br>打开 App 后，用激活卡密激活软件。</div>';
+      card.innerHTML = '<div class="km-ok">验证通过，下载已经开始。<br>下完核对大小 ' + pendingSize + '，点开安装；<br>打开 App 后，用激活卡密激活软件。</div>';
       startDownload();
       setTimeout(closeGate, 2600);
     } else {
