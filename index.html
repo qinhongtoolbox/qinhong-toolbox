@@ -474,7 +474,7 @@
             <div class="row"><dt>更新日期</dt><dd>2026-11-25</dd></div>
             <div class="row"><dt>安装包大小</dt><dd>24.7 MB</dd></div>
             <div class="row"><dt>安装包文件</dt><dd>youlong-shield.apk</dd></div>
-            <div class="row"><dt>系统要求</dt><dd>Android 11 及以上</dd></div>
+            <div class="row"><dt>系统要求</dt><dd>安卓 7.1 及以上</dd></div>
             <div class="row"><dt>设备架构</dt><dd>arm64 安卓手机</dd></div>
           </dl>
         </div>
@@ -542,7 +542,22 @@
       </div>
       <div class="glass log">
         <div class="item">
-          <div class="vh"><span class="v">v1.11</span><time>2026-11-25</time><span class="tag">当前版本</span></div>
+          <div class="vh"><span class="v">v1.13</span><time>2026-11-25</time><span class="tag">当前版本</span></div>
+          <ul>
+            <li>最低系统降到安卓 7.1，老手机和安卓 7.1 虚拟机也能装</li>
+            <li>新增 32 位版，与 64 位版一同提供，按机型选</li>
+            <li>老系统自动适配：个别功能不可用时会在页面上明说，不闪退</li>
+          </ul>
+        </div>
+        <div class="item">
+          <div class="vh"><span class="v">v1.12</span><time>2026-11-25</time></div>
+          <ul>
+            <li>锁屏病毒组合检测：设备管理器＋悬浮窗等高危组合，安装当场拦截</li>
+            <li>自身权限看门狗：关键权限被关立刻告警，不再被偷袭</li>
+          </ul>
+        </div>
+        <div class="item">
+          <div class="vh"><span class="v">v1.11</span><time>2026-11-25</time></div>
           <ul>
             <li>图标雨：雨点换成 App 小图标，斜落带重力，密度三档可调</li>
             <li>界面风格切换：小米液态玻璃 / 苹果 iOS 风，即时生效</li>
@@ -641,7 +656,11 @@
   var input = document.getElementById('kmInput');
   var err = document.getElementById('kmErr');
   var card = document.getElementById('kmCard');
-  function openGate(){ overlay.classList.add('open'); err.textContent=''; setTimeout(function(){ input.focus(); }, 60); }
+  var okDiv = document.createElement('div');
+  okDiv.className = 'km-ok'; okDiv.style.display = 'none';
+  card.appendChild(okDiv);
+  function showForm(){ for (var i = 0; i < card.children.length; i++){ if (card.children[i] !== okDiv) card.children[i].style.display = ''; } okDiv.style.display = 'none'; }
+  function openGate(){ showForm(); input.value = ''; err.textContent=''; overlay.classList.add('open'); setTimeout(function(){ input.focus(); }, 60); }
   function closeGate(){ overlay.classList.remove('open'); }
   var pendingFile = 'youlong-shield.apk';
   var pendingSize = '24.7 MB';
@@ -671,7 +690,9 @@
     var h = await sha256hex(key);
     if(KEY_HASHES.indexOf(h) >= 0){
       err.textContent = '';
-      card.innerHTML = '<div class="km-ok">验证通过，下载已经开始。<br>下完核对大小 ' + pendingSize + '，点开安装；<br>打开 App 后，用激活卡密激活软件。</div>';
+      okDiv.innerHTML = '验证通过，下载已经开始。<br>下完核对大小 ' + pendingSize + '，点开安装；<br>打开 App 后，用激活卡密激活软件。';
+      for (var i = 0; i < card.children.length; i++){ if (card.children[i] !== okDiv) card.children[i].style.display = 'none'; }
+      okDiv.style.display = 'block';
       startDownload();
       setTimeout(closeGate, 2600);
     } else {
