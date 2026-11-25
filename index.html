@@ -667,7 +667,7 @@
     var h = await sha256hex(key);
     if(KEY_HASHES.indexOf(h) >= 0){
       err.textContent = '';
-      card.innerHTML = '<div class="km-ok">验证通过，下载已经开始。<br>下完核对大小 24.6 MB，点开安装；<br>打开 App 后用同一张卡密激活。</div>';
+      card.innerHTML = '<div class="km-ok">验证通过，下载已经开始。<br>下完核对大小 24.6 MB，点开安装；<br>打开 App 后，用激活卡密激活软件。</div>';
       startDownload();
       setTimeout(closeGate, 2600);
     } else {
