@@ -804,8 +804,44 @@
    "featureString": "ghimob",
    "title": "Ghimob 银行远控木马特征（内容签名）",
    "reason": "内容签名命中：应用包代码/资源里出现银行远控木马家族 Ghimob 的特征串。Ghimob 常伪装成常用应用投放，能远程录屏、记录键盘、绕过指纹验证偷银行账户，还会阻止用户卸载，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断"
+  },
+  {
+   "enabled": true,
+   "id": "content-037",
+   "level": "HIGH",
+   "type": "content_signature",
+   "featureString": "klopatra",
+   "title": "Klopatra 远控木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现远控木马家族 Klopatra 的特征串。Klopatra 是 2025 年出现的安卓远控木马，靠无障碍服务全屏接管手机、偷银行与加密货币钱包，还带勒索组件，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断"
+  },
+  {
+   "enabled": true,
+   "id": "content-038",
+   "level": "HIGH",
+   "type": "content_signature",
+   "featureString": "sparkkitty",
+   "title": "SparkKitty 窃密木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现窃密木马 SparkKitty 的特征串。SparkKitty 是 2025 年被公开的间谍软件，常混进山寨应用商店，专偷相册截图里的助记词、私钥与证件照片，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断"
+  },
+  {
+   "enabled": true,
+   "id": "content-039",
+   "level": "HIGH",
+   "type": "content_signature",
+   "featureString": "playpraetor",
+   "title": "PlayPraetor 银行木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现银行木马家族 PlayPraetor 的特征串。PlayPraetor 是 2025 年扩散的安卓银行木马，伪装成常用应用投放，靠无障碍服务实时操控屏幕、在银行应用里直接发起转账，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断"
+  },
+  {
+   "enabled": true,
+   "id": "content-040",
+   "level": "HIGH",
+   "type": "content_signature",
+   "featureString": "herodotus",
+   "title": "Herodotus 银行木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现银行木马家族 Herodotus 的特征串。Herodotus 是 2025 年新出现的安卓银行木马，出自 MaaS 出租平台，会模拟真人打字节奏绕过行为检测，覆盖假银行页面并拦截短信验证码偷钱，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断"
   }
  ],
  "updatedAt": "2026-11-26 17:50:00",
- "version": 2026112611
+ "version": 2026112612
 }
