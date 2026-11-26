@@ -1,5 +1,5 @@
 {
- "description": "内置病毒库（学习研究用）：包名规则来自 Dr.Web、Check Point、ThreatFabric 等公开威胁情报与 stalkerware 公开 IOC；权限/行为/签名规则为通用组合判定。v1.14 新增实测锁机/破坏样本：终末神明Plus（mio.terminaldeity.plus）。v1.29 新增秦红官方无害测试样本规则（pkg-500，com.study.testsample）。v1.30 新增内容签名规则（content-001，EICAR 标准测试串，扫描 dex 与 assets 内容）。v1.31 内容签名扩充：新增锁机/勒索话术与终末神明家族特征共 4 条（content-002~005），均经阳性样本命中与阴性对照不误报验证。v1.32 内容签名再扩 3 条远控/渗透框架特征（content-006~008：AhMyth、DroidJack、Metasploit 载荷），同样经阳性命中与阴性不误报验证。v1.34 内容签名再扩 4 条代码标识类高置信特征（content-009~012：XMRig 挖矿、CoinHive 网页挖矿、AndroRAT 远控、RageAgainstTheCage 提权利用），同样经阳性命中与阴性不误报验证；启发式新增隐藏图标+无障碍+自启（heur-007）与无障碍+短信读取可疑组合（heur-008）。v1.36 内容签名再扩 4 条代码标识类高置信特征（content-017~020：Triada 预装级木马、HummingBad 广告木马、Cerberus 银行木马、FluBot 短信蠕虫），同样经阳性命中与阴性不误报验证；启发式新增装机分发组合（heur-009）与短信蠕虫画像组合（heur-010），均只报可疑。v1.37 内容签名再扩 4 条代码标识类高置信特征（content-021~024：Anubis、TeaBot、BRATA、SharkBot 银行木马家族），同样经阳性命中与阴性不误报验证；启发式新增通知监听＋无障碍（heur-011）与悬浮窗＋请求安装（heur-012）两条流氓画像组合，均只报可疑。v1.38 内容签名再扩 4 条专名标识类高置信特征（content-025~028：SpyNote 远控、CypherRat 远控生成器、Gigabud 银行木马、ERMAC 银行木马），同样经阳性命中与阴性不误报验证；启发式新增设备管理员＋发短信高危组合（heur-013，主流厂商降一级）与通知监听＋请求安装可疑组合（heur-014）。v1.39 内容签名再扩 4 条专名标识类高置信特征（content-029~032：HookBot、Xenomorph、Vultur、PixPirate 银行木马家族；两家同类弃选并说明：Godfather 本身是常见英文词（教父），正规应用里出现概率不低，误报面大；Zanubis 的特征串包含 Anubis 的特征串，命中必然双报、徒增噪音），同样经阳性命中与阴性不误报验证；启发式新增无障碍＋请求删除应用可疑组合（heur-015）与录音＋开机自启＋隐藏图标窃听画像组合（heur-016，主流厂商降一级）。v1.40 内容签名再扩 4 条专名标识类高置信特征（content-033~036：Crocodilus 银行木马、EventBot 银行木马、TangleBot 短信木马、Ghimob 银行远控木马），同样经阳性命中与阴性不误报验证；启发式新增无障碍＋悬浮窗（heur-017）与通知监听＋短信读取（heur-018）两条可疑组合。",
+ "description": "内置病毒库（学习研究用）：包名规则来自 Dr.Web、Check Point、ThreatFabric 等公开威胁情报与 stalkerware 公开 IOC；权限/行为/签名规则为通用组合判定。v1.14 新增实测锁机/破坏样本：终末神明Plus（mio.terminaldeity.plus）。v1.29 新增秦红官方无害测试样本规则（pkg-500，com.study.testsample）。v1.30 新增内容签名规则（content-001，EICAR 标准测试串，扫描 dex 与 assets 内容）。v1.31 内容签名扩充：新增锁机/勒索话术与终末神明家族特征共 4 条（content-002~005），均经阳性样本命中与阴性对照不误报验证。v1.32 内容签名再扩 3 条远控/渗透框架特征（content-006~008：AhMyth、DroidJack、Metasploit 载荷），同样经阳性命中与阴性不误报验证。v1.34 内容签名再扩 4 条代码标识类高置信特征（content-009~012：XMRig 挖矿、CoinHive 网页挖矿、AndroRAT 远控、RageAgainstTheCage 提权利用），同样经阳性命中与阴性不误报验证；启发式新增隐藏图标+无障碍+自启（heur-007）与无障碍+短信读取可疑组合（heur-008）。v1.36 内容签名再扩 4 条代码标识类高置信特征（content-017~020：Triada 预装级木马、HummingBad 广告木马、Cerberus 银行木马、FluBot 短信蠕虫），同样经阳性命中与阴性不误报验证；启发式新增装机分发组合（heur-009）与短信蠕虫画像组合（heur-010），均只报可疑。v1.37 内容签名再扩 4 条代码标识类高置信特征（content-021~024：Anubis、TeaBot、BRATA、SharkBot 银行木马家族），同样经阳性命中与阴性不误报验证；启发式新增通知监听＋无障碍（heur-011）与悬浮窗＋请求安装（heur-012）两条流氓画像组合，均只报可疑。v1.38 内容签名再扩 4 条专名标识类高置信特征（content-025~028：SpyNote 远控、CypherRat 远控生成器、Gigabud 银行木马、ERMAC 银行木马），同样经阳性命中与阴性不误报验证；启发式新增设备管理员＋发短信高危组合（heur-013，主流厂商降一级）与通知监听＋请求安装可疑组合（heur-014）。v1.39 内容签名再扩 4 条专名标识类高置信特征（content-029~032：HookBot、Xenomorph、Vultur、PixPirate 银行木马家族；两家同类弃选并说明：Godfather 本身是常见英文词（教父），正规应用里出现概率不低，误报面大；Zanubis 的特征串包含 Anubis 的特征串，命中必然双报、徒增噪音），同样经阳性命中与阴性不误报验证；启发式新增无障碍＋请求删除应用可疑组合（heur-015）与录音＋开机自启＋隐藏图标窃听画像组合（heur-016，主流厂商降一级）。v1.40 内容签名再扩 4 条专名标识类高置信特征（content-033~036：Crocodilus 银行木马、EventBot 银行木马、TangleBot 短信木马、Ghimob 银行远控木马），同样经阳性命中与阴性不误报验证；启发式新增无障碍＋悬浮窗（heur-017）与通知监听＋短信读取（heur-018）两条可疑组合。v1.43 内容签名再扩 4 条专名标识类高置信特征（content-045~048：GoldPickaxe 人脸窃取木马、ToxicPanda 银行木马、DroidBot 银行木马、SuperCard X NFC 中继盗刷），同样经阳性命中与阴性不误报验证；启发式新增录音＋悬浮窗＋开机自启（heur-023）与请求删除应用＋隐藏图标（heur-024）两条可疑组合。",
  "rules": [
   {
    "enabled": true,
@@ -876,8 +876,44 @@
    "featureString": "mekotio",
    "title": "Mekotio 银行木马特征（内容签名）",
    "reason": "内容签名命中：应用包代码/资源里出现银行木马家族 Mekotio 的特征串。Mekotio 是拉美老牌银行木马，常借假税务、假账单邮件和恶意安装包传播，装上后监控剪贴板、记录键盘并等待银行页面出现时下手，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断"
+  },
+  {
+   "id": "content-045",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "GoldPickaxe 人脸窃取木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现人脸窃取木马家族 GoldPickaxe 的特征串。GoldPickaxe 伪装成政府服务应用诱导安装，骗取人脸视频与身份证照片制作深度伪造、绕过人脸验证盗取银行账户，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "goldpickaxe"
+  },
+  {
+   "id": "content-046",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "ToxicPanda 银行木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现银行木马家族 ToxicPanda 的特征串。ToxicPanda 伪装成常用应用投放，靠无障碍服务拦截短信验证码、覆盖假银行页面并远程操控转账偷钱，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "toxicpanda"
+  },
+  {
+   "id": "content-047",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "DroidBot 银行木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现银行木马家族 DroidBot 的特征串。DroidBot 是近年活跃的 MaaS 出租银行木马，靠无障碍服务与虚拟网络覆盖假登录页面、拦截短信验证码并远程操控设备偷钱，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "droidbot"
+  },
+  {
+   "id": "content-048",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "SuperCard X NFC 中继盗刷木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现 NFC 中继盗刷木马 SuperCard X 的特征串。SuperCard X 诱导受害人把银行卡贴近手机读取 NFC 数据，再中继到攻击者手里的设备上盗刷，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "supercard"
   }
  ],
- "updatedAt": "2026-11-26 20:00:00",
- "version": 2026112613
+ "updatedAt": "2026-11-26 21:30:00",
+ "version": 2026112614
 }
