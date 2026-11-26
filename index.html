@@ -377,6 +377,37 @@
     </div>
   </div>
 
+  <!-- 电脑版 -->
+  <section id="pc">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>电脑版</h2>
+        <p>同一个秦红工具箱，现在也有 Windows 版了：单个文件，双击即用、免安装。</p>
+      </div>
+      <div class="glass" style="max-width:820px;margin:0 auto;padding:28px 30px">
+        <p style="margin:0;font-size:15px;line-height:1.9"><b>电脑版 v1.0</b> · 大小 12.5 MB · Windows 64 位 · 双击打开就能用，不用安装。</p>
+        <ul style="margin:12px 0 0;padding-left:20px;font-size:14px;line-height:2;color:var(--ink2)">
+          <li>文件病毒扫描：命中可疑文件可以删除或隔离</li>
+          <li>系统清理、开机启动项管理、系统信息一页看清</li>
+          <li>文件哈希校验、重复文件查找</li>
+          <li>AI 助手「小秦」，有问题直接问</li>
+          <li>壁纸库：内置 7 张壁纸，还能在线挑壁纸</li>
+          <li>九年级全科资料库：236 条知识点，随查随看</li>
+          <li>在线查学校分数：榆林 / 西安控制线</li>
+          <li>电子白板：学校白板上随手写画</li>
+        </ul>
+        <p style="margin:14px 0 0;font-size:13.5px;line-height:1.85;color:var(--ink2)">卡密激活与手机版通用（同一套算法）：手机版的激活卡密，在电脑版上可以直接用。下载同样先过下面的卡密验证，公开下载卡密一键填入即可。</p>
+        <div style="margin-top:22px;text-align:center">
+          <a class="btn btn-primary btn-big dl-pc" href="qinhong-toolbox-pc.exe" download="qinhong-toolbox-pc.exe">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 21h16"/></svg>
+            下载电脑版 v1.0
+          </a>
+          <p style="margin:10px 0 0;font-size:12.5px;color:var(--ink2)">下完先核对大小：12.5 MB（13,075,456 字节），对上了再打开。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 功能介绍 -->
   <section id="features">
     <div class="wrap">
@@ -545,6 +576,15 @@
         <p>这个页面长期不变，软件更新后回来下载就是最新版。</p>
       </div>
       <div class="glass log">
+        <div class="item">
+          <div class="vh"><span class="v">电脑版 v1.0</span><time>2026-11-26</time><span class="tag">新发布</span></div>
+          <ul>
+            <li>电脑版（Windows 64 位）正式发布：单个文件 12.5 MB，双击即用、免安装，本页新增「电脑版」下载区</li>
+            <li>文件病毒扫描（可删除 / 隔离）、系统清理、开机启动项管理、系统信息、文件哈希、重复文件查找</li>
+            <li>AI 助手小秦、壁纸库（内置 7 张 + 在线壁纸）、九年级全科资料库（236 条）、在线查学校分数、电子白板</li>
+            <li>卡密激活与手机版通用（同一套算法），手机版的激活卡密可直接在电脑版使用</li>
+          </ul>
+        </div>
         <div class="item">
           <div class="vh"><span class="v">v1.34</span><time>2026-11-26</time><span class="tag">当前版本</span></div>
           <ul>
@@ -873,8 +913,9 @@
   function closeGate(){ overlay.classList.remove('open'); }
   var pendingFile = 'youlong-shield.apk';
   var pendingSize = '18.3 MB';
-  document.querySelectorAll('.dl-btn, .dl-btn32').forEach(function(btn){
-    btn.addEventListener('click', function(ev){ ev.preventDefault(); pendingFile = btn.getAttribute('href') || 'youlong-shield.apk'; pendingSize = pendingFile.indexOf('32') >= 0 ? '18.1 MB' : '18.3 MB'; openGate(); });
+  var pendingTip = '点开安装；<br>打开 App 后，用激活卡密激活软件。';
+  document.querySelectorAll('.dl-btn, .dl-btn32, .dl-pc').forEach(function(btn){
+    btn.addEventListener('click', function(ev){ ev.preventDefault(); pendingFile = btn.getAttribute('href') || 'youlong-shield.apk'; if (pendingFile.indexOf('pc') >= 0) { pendingSize = '12.5 MB'; pendingTip = '双击打开就能用；<br>打开后，用激活卡密激活软件（与手机版通用）。'; } else if (pendingFile.indexOf('32') >= 0) { pendingSize = '18.1 MB'; pendingTip = '点开安装；<br>打开 App 后，用激活卡密激活软件。'; } else { pendingSize = '18.3 MB'; pendingTip = '点开安装；<br>打开 App 后，用激活卡密激活软件。'; } openGate(); });
   });
   document.getElementById('kmCancel').addEventListener('click', closeGate);
   overlay.addEventListener('click', function(ev){ if(ev.target === overlay) closeGate(); });
@@ -899,7 +940,7 @@
     var h = await sha256hex(key);
     if(KEY_HASHES.indexOf(h) >= 0){
       err.textContent = '';
-      okDiv.innerHTML = '验证通过，下载已经开始。<br>下完核对大小 ' + pendingSize + '，点开安装；<br>打开 App 后，用激活卡密激活软件。';
+      okDiv.innerHTML = '验证通过，下载已经开始。<br>下完核对大小 ' + pendingSize + '，' + pendingTip;
       for (var i = 0; i < card.children.length; i++){ if (card.children[i] !== okDiv) card.children[i].style.display = 'none'; }
       okDiv.style.display = 'block';
       startDownload();
