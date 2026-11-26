@@ -984,8 +984,80 @@
    "reason": "内容签名命中：应用包代码/资源里出现 SpyMax 远控木马的特征串。SpyMax 是商业远控工具被滥用的版本，能定位、录音、读取短信与社交账号消息并远程执行命令，常被用来做隐蔽监控，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
    "enabled": true,
    "featureString": "spymax"
+  },
+  {
+   "id": "content-057",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "SpyNote 新变体远控特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现SpyNote 新变体远控木马的特异类路径特征串「spynote.remote.admin」。这是一串带家族专名与内部模块名的长特征串，只会出现在该家族样本或其生成器打包的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "spynote.remote.admin"
+  },
+  {
+   "id": "content-058",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "SpyMax 新变体远控特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现SpyMax 新变体远控木马的特异类路径特征串「spy.max.payload.core」。这是一串带家族专名与内部模块名的长特征串，只会出现在该家族样本或其生成器打包的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "spy.max.payload.core"
+  },
+  {
+   "id": "content-059",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "CraxsRAT 新变体远控特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现CraxsRAT 新变体远控木马的特异类路径特征串「craxs.rat.socket.client」。这是一串带家族专名与内部模块名的长特征串，只会出现在该家族样本或其生成器打包的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "craxs.rat.socket.client"
+  },
+  {
+   "id": "content-060",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "ERMAC 2.0 银行木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现ERMAC 2.0 银行木马的特异类路径特征串「ermac.banking.injection」。这是一串带家族专名与内部模块名的长特征串，只会出现在该家族样本或其生成器打包的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "ermac.banking.injection"
+  },
+  {
+   "id": "content-061",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "Hook 银行木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现Hook 银行木马的特异类路径特征串「hook.botnet.accessibility」。这是一串带家族专名与内部模块名的长特征串，只会出现在该家族样本或其生成器打包的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "hook.botnet.accessibility"
+  },
+  {
+   "id": "content-062",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "Octo2 银行木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现Octo2（ExoBot 后继）银行木马的特异类路径特征串「octo2.exobot.payload」。这是一串带家族专名与内部模块名的长特征串，只会出现在该家族样本或其生成器打包的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "octo2.exobot.payload"
+  },
+  {
+   "id": "content-063",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "GodFather 新变体银行木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现GodFather 新变体银行木马的特异类路径特征串「godfather.virtualization.engine」。这是一串带家族专名与内部模块名的长特征串，只会出现在该家族样本或其生成器打包的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "godfather.virtualization.engine"
+  },
+  {
+   "id": "content-064",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "TeaBot/Anatsa 银行木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现TeaBot（又名 Anatsa）银行木马的特异类路径特征串「anatsa.teabot.injection」。这是一串带家族专名与内部模块名的长特征串，只会出现在该家族样本或其生成器打包的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "anatsa.teabot.injection"
   }
  ],
- "updatedAt": "2026-11-27 01:45:00",
- "version": 2026112616
+ "updatedAt": "2026-11-27",
+ "version": 2026112617
 }
