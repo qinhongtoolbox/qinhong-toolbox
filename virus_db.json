@@ -840,8 +840,44 @@
    "featureString": "herodotus",
    "title": "Herodotus 银行木马特征（内容签名）",
    "reason": "内容签名命中：应用包代码/资源里出现银行木马家族 Herodotus 的特征串。Herodotus 是 2025 年新出现的安卓银行木马，出自 MaaS 出租平台，会模拟真人打字节奏绕过行为检测，覆盖假银行页面并拦截短信验证码偷钱，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断"
+  },
+  {
+   "enabled": true,
+   "id": "content-041",
+   "level": "HIGH",
+   "type": "content_signature",
+   "featureString": "brasdex",
+   "title": "BrasDex 银行木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现银行木马家族 BrasDex 的特征串。BrasDex 是源自巴西的安卓银行木马，靠无障碍服务全自动操控手机，在受害人眼皮底下完成转账，还能读取屏幕和键盘输入，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断"
+  },
+  {
+   "enabled": true,
+   "id": "content-042",
+   "level": "HIGH",
+   "type": "content_signature",
+   "featureString": "casbaneiro",
+   "title": "Casbaneiro 银行木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现银行木马家族 Casbaneiro（又名 Metamorfo）的特征串。Casbaneiro 是拉美地区活跃多年的银行木马，惯用假更新、假银行弹窗诱导安装，再靠覆盖假页面和键盘记录偷账号密码，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断"
+  },
+  {
+   "enabled": true,
+   "id": "content-043",
+   "level": "HIGH",
+   "type": "content_signature",
+   "featureString": "amavaldo",
+   "title": "Amavaldo 银行木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现银行木马家族 Amavaldo 的特征串。Amavaldo 是巴西犯罪团伙运营的银行木马家族，专门盯银行与加密货币用户，靠假登录页面、键盘记录和远程操控偷钱，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断"
+  },
+  {
+   "enabled": true,
+   "id": "content-044",
+   "level": "HIGH",
+   "type": "content_signature",
+   "featureString": "mekotio",
+   "title": "Mekotio 银行木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现银行木马家族 Mekotio 的特征串。Mekotio 是拉美老牌银行木马，常借假税务、假账单邮件和恶意安装包传播，装上后监控剪贴板、记录键盘并等待银行页面出现时下手，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断"
   }
  ],
- "updatedAt": "2026-11-26 17:50:00",
- "version": 2026112612
+ "updatedAt": "2026-11-26 20:00:00",
+ "version": 2026112613
 }
