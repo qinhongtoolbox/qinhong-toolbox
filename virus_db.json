@@ -1,5 +1,5 @@
 {
- "description": "内置病毒库（学习研究用）：包名规则来自 Dr.Web、Check Point、ThreatFabric 等公开威胁情报与 stalkerware 公开 IOC；权限/行为/签名规则为通用组合判定。v1.14 新增实测锁机/破坏样本：终末神明Plus（mio.terminaldeity.plus）。v1.29 新增秦红官方无害测试样本规则（pkg-500，com.study.testsample）。v1.30 新增内容签名规则（content-001，EICAR 标准测试串，扫描 dex 与 assets 内容）。v1.31 内容签名扩充：新增锁机/勒索话术与终末神明家族特征共 4 条（content-002~005），均经阳性样本命中与阴性对照不误报验证。v1.32 内容签名再扩 3 条远控/渗透框架特征（content-006~008：AhMyth、DroidJack、Metasploit 载荷），同样经阳性命中与阴性不误报验证。v1.34 内容签名再扩 4 条代码标识类高置信特征（content-009~012：XMRig 挖矿、CoinHive 网页挖矿、AndroRAT 远控、RageAgainstTheCage 提权利用），同样经阳性命中与阴性不误报验证；启发式新增隐藏图标+无障碍+自启（heur-007）与无障碍+短信读取可疑组合（heur-008）。v1.36 内容签名再扩 4 条代码标识类高置信特征（content-017~020：Triada 预装级木马、HummingBad 广告木马、Cerberus 银行木马、FluBot 短信蠕虫），同样经阳性命中与阴性不误报验证；启发式新增装机分发组合（heur-009）与短信蠕虫画像组合（heur-010），均只报可疑。",
+ "description": "内置病毒库（学习研究用）：包名规则来自 Dr.Web、Check Point、ThreatFabric 等公开威胁情报与 stalkerware 公开 IOC；权限/行为/签名规则为通用组合判定。v1.14 新增实测锁机/破坏样本：终末神明Plus（mio.terminaldeity.plus）。v1.29 新增秦红官方无害测试样本规则（pkg-500，com.study.testsample）。v1.30 新增内容签名规则（content-001，EICAR 标准测试串，扫描 dex 与 assets 内容）。v1.31 内容签名扩充：新增锁机/勒索话术与终末神明家族特征共 4 条（content-002~005），均经阳性样本命中与阴性对照不误报验证。v1.32 内容签名再扩 3 条远控/渗透框架特征（content-006~008：AhMyth、DroidJack、Metasploit 载荷），同样经阳性命中与阴性不误报验证。v1.34 内容签名再扩 4 条代码标识类高置信特征（content-009~012：XMRig 挖矿、CoinHive 网页挖矿、AndroRAT 远控、RageAgainstTheCage 提权利用），同样经阳性命中与阴性不误报验证；启发式新增隐藏图标+无障碍+自启（heur-007）与无障碍+短信读取可疑组合（heur-008）。v1.36 内容签名再扩 4 条代码标识类高置信特征（content-017~020：Triada 预装级木马、HummingBad 广告木马、Cerberus 银行木马、FluBot 短信蠕虫），同样经阳性命中与阴性不误报验证；启发式新增装机分发组合（heur-009）与短信蠕虫画像组合（heur-010），均只报可疑。v1.37 内容签名再扩 4 条代码标识类高置信特征（content-021~024：Anubis、TeaBot、BRATA、SharkBot 银行木马家族），同样经阳性命中与阴性不误报验证；启发式新增通知监听＋无障碍（heur-011）与悬浮窗＋请求安装（heur-012）两条流氓画像组合，均只报可疑。",
  "rules": [
   {
    "enabled": true,
@@ -660,8 +660,44 @@
    "featureString": "flubot",
    "title": "FluBot 短信蠕虫特征（内容签名）",
    "reason": "内容签名命中：应用包代码/资源里出现短信蠕虫家族 FluBot 的特征串。FluBot 冒充快递/语音信箱应用发短信扩散，装上后读取通讯录群发传播、盖屏偷银行信息，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断"
+  },
+  {
+   "enabled": true,
+   "id": "content-021",
+   "level": "HIGH",
+   "type": "content_signature",
+   "featureString": "anubis",
+   "title": "Anubis 银行木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现银行木马家族 Anubis 的特征串。Anubis 靠无障碍服务盖屏假冒银行与支付界面、拦截短信验证码，还带远控与勒索组件，其泄露源码与样本代码里都带这个家族标识，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断"
+  },
+  {
+   "enabled": true,
+   "id": "content-022",
+   "level": "HIGH",
+   "type": "content_signature",
+   "featureString": "teabot",
+   "title": "TeaBot 银行木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现银行木马家族 TeaBot 的特征串。TeaBot 常冒充二维码扫描、清理工具等小应用投放，装上后用无障碍服务盖屏假冒银行登录页、记录键盘输入偷账号，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断"
+  },
+  {
+   "enabled": true,
+   "id": "content-023",
+   "level": "HIGH",
+   "type": "content_signature",
+   "featureString": "brata",
+   "title": "BRATA 银行远控木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现银行木马家族 BRATA 的特征串。BRATA 起初冒充安全工具传播，能远程操控手机、恢复出厂设置毁灭证据，后期版本专门盖屏偷银行与支付信息，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断"
+  },
+  {
+   "enabled": true,
+   "id": "content-024",
+   "level": "HIGH",
+   "type": "content_signature",
+   "featureString": "sharkbot",
+   "title": "SharkBot 银行木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现银行木马家族 SharkBot 的特征串。SharkBot 带自动转账（ATS）能力，能用无障碍服务在银行应用里自己点完一整笔转账，还会盖屏偷登录信息，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断"
   }
  ],
- "updatedAt": "2026-11-26 16:24:27",
- "version": 2026112607
+ "updatedAt": "2026-11-26 16:52:00",
+ "version": 2026112608
 }
