@@ -1,0 +1,667 @@
+{
+ "description": "内置病毒库（学习研究用）：包名规则来自 Dr.Web、Check Point、ThreatFabric 等公开威胁情报与 stalkerware 公开 IOC；权限/行为/签名规则为通用组合判定。v1.14 新增实测锁机/破坏样本：终末神明Plus（mio.terminaldeity.plus）。v1.29 新增秦红官方无害测试样本规则（pkg-500，com.study.testsample）。v1.30 新增内容签名规则（content-001，EICAR 标准测试串，扫描 dex 与 assets 内容）。v1.31 内容签名扩充：新增锁机/勒索话术与终末神明家族特征共 4 条（content-002~005），均经阳性样本命中与阴性对照不误报验证。v1.32 内容签名再扩 3 条远控/渗透框架特征（content-006~008：AhMyth、DroidJack、Metasploit 载荷），同样经阳性命中与阴性不误报验证。v1.34 内容签名再扩 4 条代码标识类高置信特征（content-009~012：XMRig 挖矿、CoinHive 网页挖矿、AndroRAT 远控、RageAgainstTheCage 提权利用），同样经阳性命中与阴性不误报验证；启发式新增隐藏图标+无障碍+自启（heur-007）与无障碍+短信读取可疑组合（heur-008）。v1.36 内容签名再扩 4 条代码标识类高置信特征（content-017~020：Triada 预装级木马、HummingBad 广告木马、Cerberus 银行木马、FluBot 短信蠕虫），同样经阳性命中与阴性不误报验证；启发式新增装机分发组合（heur-009）与短信蠕虫画像组合（heur-010），均只报可疑。",
+ "rules": [
+  {
+   "enabled": true,
+   "id": "pkg-001",
+   "level": "HIGH",
+   "packageName": "com.example.fake.cleaner",
+   "reason": "精准包名命中：已知仿冒清理类木马样本（示例数据）",
+   "title": "仿冒清理工具（示例）",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-002",
+   "level": "HIGH",
+   "packageName": "com.example.lock.screen.demo",
+   "reason": "精准包名命中：锁机类样本，同归于尽模式优先处理",
+   "title": "锁机勒索样本（示例）",
+   "type": "package_name"
+  },
+  {
+   "componentKeyword": "FloatWindowService",
+   "enabled": true,
+   "featureString": "force_lock_screen",
+   "id": "sig-001",
+   "level": "SUSPICIOUS",
+   "reason": "组件名含 FloatWindowService 且代码特征含强制锁屏字符串",
+   "title": "可疑悬浮窗服务（示例）",
+   "type": "signature"
+  },
+  {
+   "enabled": true,
+   "id": "perm-001",
+   "level": "HIGH",
+   "reason": "同时申请设备管理、悬浮窗与开机自启，典型锁机/顽固流氓组合",
+   "requiredPermissions": [
+    "android.permission.BIND_DEVICE_ADMIN",
+    "android.permission.SYSTEM_ALERT_WINDOW",
+    "android.permission.RECEIVE_BOOT_COMPLETED"
+   ],
+   "title": "设备管理器+悬浮窗+自启组合（示例）",
+   "type": "permission_rule"
+  },
+  {
+   "enabled": true,
+   "id": "perm-002",
+   "level": "ADWARE",
+   "reason": "悬浮窗全屏广告叠加安装拉活权限，广告流氓常见组合",
+   "requiredPermissions": [
+    "android.permission.SYSTEM_ALERT_WINDOW",
+    "android.permission.REQUEST_INSTALL_PACKAGES"
+   ],
+   "title": "悬浮窗广告+静默拉活组合（示例）",
+   "type": "permission_rule"
+  },
+  {
+   "behaviorKey": "frequent_self_start",
+   "enabled": true,
+   "id": "beh-001",
+   "level": "SUSPICIOUS",
+   "reason": "24 小时内自启次数超过阈值（由守护服务统计后回填命中）",
+   "thresholdPerDay": 20,
+   "title": "频繁自启（示例）",
+   "type": "behavior_rule"
+  },
+  {
+   "behaviorKey": "excessive_popup",
+   "enabled": true,
+   "id": "beh-002",
+   "level": "ADWARE",
+   "reason": "24 小时内前台弹窗次数超过阈值",
+   "thresholdPerDay": 30,
+   "title": "大量弹窗（示例）",
+   "type": "behavior_rule"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-100",
+   "level": "HIGH",
+   "packageName": "com.nova.superkeyboard",
+   "reason": "包名命中：Joker 木马样本（Dr.Web 公开报告），会偷订付费服务、拦截短信验证码",
+   "title": "Joker 扣费木马 · Super Keyboard",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-101",
+   "level": "HIGH",
+   "packageName": "com.colour.syuhgbvcff",
+   "reason": "包名命中：Joker 木马样本（Dr.Web 公开报告），会偷订付费服务、拦截短信验证码",
+   "title": "Joker 扣费木马 · Happy Colour",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-102",
+   "level": "HIGH",
+   "packageName": "com.funcolor.toucheffects",
+   "reason": "包名命中：Joker 木马样本（Dr.Web 公开报告），会偷订付费服务、拦截短信验证码",
+   "title": "Joker 扣费木马 · Fun Color",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-103",
+   "level": "HIGH",
+   "packageName": "com.newyear.onekeyboard",
+   "reason": "包名命中：Joker 木马样本（Dr.Web 公开报告），会偷订付费服务、拦截短信验证码",
+   "title": "Joker 扣费木马 · New 2021 Keyboard",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-104",
+   "level": "HIGH",
+   "packageName": "com.sdkfj.uhbnji.dsfeff",
+   "reason": "包名命中：Joker 木马样本（Dr.Web 公开报告），会偷订付费服务、拦截短信验证码",
+   "title": "Joker 扣费木马 · Camera MX 仿冒相机",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-105",
+   "level": "HIGH",
+   "packageName": "com.beautyplus.excetwa.camera",
+   "reason": "包名命中：Joker 木马样本（Dr.Web 公开报告），会偷订付费服务、拦截短信验证码",
+   "title": "Joker 扣费木马 · BeautyPlus Camera 仿冒",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-106",
+   "level": "HIGH",
+   "packageName": "com.hwcolor.jinbao.rollingicon",
+   "reason": "包名命中：Joker 木马样本（Dr.Web 公开报告），会偷订付费服务、拦截短信验证码",
+   "title": "Joker 扣费木马 · Color RollingIcon",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-107",
+   "level": "HIGH",
+   "packageName": "com.meme.rouijhhkl",
+   "reason": "包名命中：Joker 木马样本（Dr.Web 公开报告），会偷订付费服务、拦截短信验证码",
+   "title": "Joker 扣费木马 · Funney Meme Emoji",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-108",
+   "level": "HIGH",
+   "packageName": "com.tap.tap.duedd",
+   "reason": "包名命中：Joker 木马样本（Dr.Web 公开报告），会偷订付费服务、拦截短信验证码",
+   "title": "Joker 扣费木马 · Happy Tapping",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-109",
+   "level": "HIGH",
+   "packageName": "com.messenger.sjdoifo",
+   "reason": "包名命中：Joker 木马样本（Dr.Web 公开报告），会偷订付费服务、拦截短信验证码",
+   "title": "Joker 扣费木马 · All-in-One Messenger 仿冒",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-200",
+   "level": "HIGH",
+   "packageName": "com.imagecompress.android",
+   "reason": "包名命中：Joker 木马样本（Check Point 公开报告），偷订付费服务并窃取短信",
+   "title": "Joker 扣费木马 · 图片压缩工具",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-201",
+   "level": "HIGH",
+   "packageName": "com.contact.withme.texts",
+   "reason": "包名命中：Joker 木马样本（Check Point 公开报告），偷订付费服务并窃取短信",
+   "title": "Joker 扣费木马 · WithMe 短信",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-202",
+   "level": "HIGH",
+   "packageName": "com.hmvoice.friendsms",
+   "reason": "包名命中：Joker 木马样本（Check Point 公开报告），偷订付费服务并窃取短信",
+   "title": "Joker 扣费木马 · FriendSMS",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-203",
+   "level": "HIGH",
+   "packageName": "com.relax.relaxation.androidsms",
+   "reason": "包名命中：Joker 木马样本（Check Point 公开报告），偷订付费服务并窃取短信",
+   "title": "Joker 扣费木马 · 放松短信",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-204",
+   "level": "HIGH",
+   "packageName": "com.cheery.message.sendsms",
+   "reason": "包名命中：Joker 木马样本（Check Point 公开报告），偷订付费服务并窃取短信",
+   "title": "Joker 扣费木马 · Cheery Message",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-205",
+   "level": "HIGH",
+   "packageName": "com.peason.lovinglovemessage",
+   "reason": "包名命中：Joker 木马样本（Check Point 公开报告），偷订付费服务并窃取短信",
+   "title": "Joker 扣费木马 · 爱心短信",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-206",
+   "level": "HIGH",
+   "packageName": "com.file.recovefiles",
+   "reason": "包名命中：Joker 木马样本（Check Point 公开报告），偷订付费服务并窃取短信",
+   "title": "Joker 扣费木马 · 文件恢复工具",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-207",
+   "level": "HIGH",
+   "packageName": "com.LPlocker.lockapps",
+   "reason": "包名命中：Joker 木马样本（Check Point 公开报告），偷订付费服务并窃取短信",
+   "title": "Joker 扣费木马 · LP 应用锁",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-208",
+   "level": "HIGH",
+   "packageName": "com.remindme.alram",
+   "reason": "包名命中：Joker 木马样本（Check Point 公开报告），偷订付费服务并窃取短信",
+   "title": "Joker 扣费木马 · 提醒闹钟",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-209",
+   "level": "HIGH",
+   "packageName": "com.training.memorygame",
+   "reason": "包名命中：Joker 木马样本（Check Point 公开报告），偷订付费服务并窃取短信",
+   "title": "Joker 扣费木马 · 记忆游戏",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-300",
+   "level": "HIGH",
+   "packageName": "com.dhl.tracking.delivery",
+   "reason": "包名命中：FluBot 样本，仿冒快递应用，靠短信通讯录蠕虫式传播并窃取银行信息",
+   "title": "FluBot 短信蠕虫（仿冒 DHL 快递）",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-301",
+   "level": "HIGH",
+   "packageName": "com.fast.cleaner.battery",
+   "reason": "包名命中：银行木马样本（ThreatFabric 公开报告），仿冒清理工具诱导开启无障碍后盗刷",
+   "title": "Xenomorph 银行木马（仿冒清理工具）",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-302",
+   "level": "HIGH",
+   "packageName": "com.secure.authenticator.pro",
+   "reason": "包名命中：银行木马样本（公开威胁情报收录），仿冒双因素验证器窃取账户信息",
+   "title": "银行木马（仿冒验证器）",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-303",
+   "level": "HIGH",
+   "packageName": "com.antivirus.super.cleaner",
+   "reason": "包名命中：仿冒安全软件样本（公开威胁情报收录），实为扣费/窃密木马的壳",
+   "title": "仿冒杀毒/清理流氓软件",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-310",
+   "level": "HIGH",
+   "packageName": "com.mspy.lite",
+   "reason": "包名命中：商业跟踪软件（MVT 公开 IOC），隐蔽监控短信、通话与定位",
+   "title": "mSpy Lite 跟踪软件",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-311",
+   "level": "HIGH",
+   "packageName": "com.wisemo.host.v10",
+   "reason": "包名命中：跟踪软件样本（公开 IOC 收录），远程监控设备活动",
+   "title": "WiseMo 跟踪软件",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-312",
+   "level": "HIGH",
+   "packageName": "com.monitor.phone.s0ft.phonemonitor",
+   "reason": "包名命中：跟踪软件样本（公开 IOC 收录），隐蔽上传通话与短信记录",
+   "title": "PhoneMonitor 跟踪软件",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-313",
+   "level": "HIGH",
+   "packageName": "and.LocatorTrial",
+   "reason": "包名命中：跟踪软件样本（公开 IOC 收录），伪装成系统组件定位监控",
+   "title": "MobiStealth 跟踪软件",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-320",
+   "level": "HIGH",
+   "packageName": "com.color.message.sms",
+   "reason": "包名命中：Joker 样本（公开威胁情报收录），偷订付费服务",
+   "title": "Joker 木马 · 彩色短信",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "perm-003",
+   "level": "HIGH",
+   "reason": "同时要短信收发、悬浮窗和通讯录：银行木马拦截验证码并覆盖银行界面的典型组合",
+   "requiredPermissions": [
+    "android.permission.RECEIVE_SMS",
+    "android.permission.SEND_SMS",
+    "android.permission.SYSTEM_ALERT_WINDOW",
+    "android.permission.READ_CONTACTS"
+   ],
+   "title": "短信拦截+悬浮窗+通讯录组合",
+   "type": "permission_rule"
+  },
+  {
+   "enabled": true,
+   "id": "perm-004",
+   "level": "HIGH",
+   "reason": "设备管理器加对抗卸载再加悬浮窗：顽固流氓软件防卸载的典型组合",
+   "requiredPermissions": [
+    "android.permission.BIND_DEVICE_ADMIN",
+    "android.permission.REQUEST_DELETE_PACKAGES",
+    "android.permission.SYSTEM_ALERT_WINDOW"
+   ],
+   "title": "设备管理器+对抗卸载组合",
+   "type": "permission_rule"
+  },
+  {
+   "enabled": true,
+   "id": "perm-005",
+   "level": "ADWARE",
+   "reason": "悬浮窗广告叠加应用枚举与静默拉活安装，广告流氓常见组合",
+   "requiredPermissions": [
+    "android.permission.SYSTEM_ALERT_WINDOW",
+    "android.permission.QUERY_ALL_PACKAGES",
+    "android.permission.REQUEST_INSTALL_PACKAGES"
+   ],
+   "title": "悬浮窗+应用枚举+拉活安装组合",
+   "type": "permission_rule"
+  },
+  {
+   "enabled": true,
+   "id": "perm-006",
+   "level": "SUSPICIOUS",
+   "reason": "同时索要摄像头、录音、精确定位和开机自启，间谍/跟踪软件常见权限画像，正规应用很少全要",
+   "requiredPermissions": [
+    "android.permission.CAMERA",
+    "android.permission.RECORD_AUDIO",
+    "android.permission.ACCESS_FINE_LOCATION",
+    "android.permission.RECEIVE_BOOT_COMPLETED"
+   ],
+   "title": "摄像头+录音+定位+自启组合",
+   "type": "permission_rule"
+  },
+  {
+   "enabled": true,
+   "id": "perm-007",
+   "level": "SUSPICIOUS",
+   "reason": "读短信加开机自启再加悬浮窗，短信窃取类样本常见组合",
+   "requiredPermissions": [
+    "android.permission.READ_SMS",
+    "android.permission.RECEIVE_SMS",
+    "android.permission.RECEIVE_BOOT_COMPLETED",
+    "android.permission.SYSTEM_ALERT_WINDOW"
+   ],
+   "title": "读短信+自启+悬浮窗组合",
+   "type": "permission_rule"
+  },
+  {
+   "componentKeyword": "SmsReceiver",
+   "enabled": true,
+   "featureString": "abortBroadcast",
+   "id": "sig-002",
+   "level": "SUSPICIOUS",
+   "reason": "组件名含 SmsReceiver 且代码拦截短信广播顺序，验证码窃取样本常用手法",
+   "title": "短信拦截广播特征",
+   "type": "signature"
+  },
+  {
+   "componentKeyword": "FloatService",
+   "enabled": true,
+   "featureString": "TYPE_APPLICATION_OVERLAY",
+   "id": "sig-003",
+   "level": "SUSPICIOUS",
+   "reason": "组件名含 FloatService 且使用应用悬浮窗类型，抢屏广告/覆盖攻击常见实现",
+   "title": "悬浮窗服务特征",
+   "type": "signature"
+  },
+  {
+   "behaviorKey": "attempt_uninstall_guard",
+   "enabled": true,
+   "id": "beh-003",
+   "level": "HIGH",
+   "reason": "24 小时内出现针对安全应用的卸载或关权限行为（反制检测回填）",
+   "thresholdPerDay": 1,
+   "title": "试图卸载/关闭守护应用",
+   "type": "behavior_rule"
+  },
+  {
+   "behaviorKey": "accessibility_tamper",
+   "enabled": true,
+   "id": "beh-004",
+   "level": "SUSPICIOUS",
+   "reason": "24 小时内在设置页活动后无障碍被关闭（反制检测回填）",
+   "thresholdPerDay": 1,
+   "title": "诱导关闭无障碍",
+   "type": "behavior_rule"
+  },
+  {
+   "behaviorKey": "lock_screen_ad",
+   "enabled": true,
+   "id": "beh-005",
+   "level": "ADWARE",
+   "reason": "24 小时内锁屏界面弹窗超过阈值，锁屏广告流氓典型行为",
+   "thresholdPerDay": 10,
+   "title": "锁屏广告",
+   "type": "behavior_rule"
+  },
+  {
+   "behaviorKey": "hidden_icon",
+   "enabled": true,
+   "id": "beh-006",
+   "level": "SUSPICIOUS",
+   "reason": "安装后隐藏桌面图标，间谍软件与木马常见隐匿手法（由守护服务回填）",
+   "thresholdPerDay": 1,
+   "title": "隐藏桌面图标",
+   "type": "behavior_rule"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-400",
+   "level": "HIGH",
+   "packageName": "mio.terminaldeity.plus",
+   "reason": "精准包名命中：实测锁机/破坏型样本「终末神明Plus」，会关闭其他安全软件的关键权限、搞崩系统界面与软件包安装程序、隐藏桌面图标并阻止卸载",
+   "title": "锁机破坏样本 · 终末神明Plus（实测）",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "id": "pkg-500",
+   "level": "HIGH",
+   "packageName": "com.study.testsample",
+   "reason": "精准包名命中：秦红工具箱官方测试样本（无害），专为验证检测、记录、上岛提醒与四种卸载模式而设；它不锁屏、不偷数据、不常驻，可随时正常卸载",
+   "title": "测试样本（无害）·秦红专用测试",
+   "type": "package_name"
+  },
+  {
+   "enabled": true,
+   "featureString": "X5O!P%@AP[4\\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*",
+   "id": "content-001",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包内含有 EICAR 标准测试字符串。这是全世界杀毒软件通用的无害测试串，本身不是病毒，专门用来验证检测引擎能不能真正读到安装包内部；命中只说明包里藏了这串字符，请结合应用来源判断",
+   "title": "EICAR 测试文件（无害）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "您的手机已被锁定",
+   "id": "content-002",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里藏有锁机勒索的典型话术「您的手机已被锁定」。正经应用不会把这种勒索文案写进包里，锁机软件正是靠全屏盖住这句话逼用户付钱或输密码",
+   "title": "锁机勒索话术（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "您的文件已被加密",
+   "id": "content-003",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里藏有勒索软件的典型话术「您的文件已被加密」。这类文案只出现在勒索加密恐吓界面里，正常工具、游戏、社交应用都不会内置",
+   "title": "勒索加密话术（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "因涉嫌违法已被锁定",
+   "id": "content-004",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里藏有冒充执法锁机的典型话术「因涉嫌违法已被锁定」。真执法机关不会用 App 全屏锁机通知，这句是假警察锁机勒索的标志文案",
+   "title": "冒充执法锁机话术（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "mio.terminaldeity",
+   "id": "content-005",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现锁机破坏家族「终末神明」的特征串 mio.terminaldeity（与 pkg-400 同家族）。该家族会关其他安全软件权限、搞崩系统界面并隐藏图标；改了包名的变种也能靠这条内容特征认出来",
+   "title": "终末神明锁机家族特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "org.ahmyth",
+   "id": "content-006",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现开源远控框架 AhMyth 的包路径特征 org.ahmyth。用该框架生成的应用具备远程控制、偷拍偷录、短信与通讯录窃取能力，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "AhMyth 远控框架特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "droidjack",
+   "id": "content-007",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现远控木马 DroidJack 的特征串 droidjack。DroidJack 是售卖多年的安卓远控工具，能远程操控手机、窃取聊天与短信，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "DroidJack 远控特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "com.metasploit.stage",
+   "id": "content-008",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码里出现 Metasploit 安卓载荷的类路径特征 com.metasploit.stage。由该框架生成的载荷会与控制端建立远程会话，正规上架应用不会内置；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "Metasploit 载荷特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "id": "content-009",
+   "level": "HIGH",
+   "featureString": "xmrig",
+   "title": "XMRig 挖矿程序特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现开源挖矿程序 XMRig 的特征串。藏着挖矿程序的应用会在你不知情时偷用你的手机算力挖矿，费电、发烫、损电池，正规应用不会内置挖矿程序；命中只说明包里含此特征串，请结合应用来源判断",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "id": "content-010",
+   "level": "HIGH",
+   "featureString": "coinhive",
+   "title": "CoinHive 网页挖矿特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现 CoinHive 网页挖矿脚本的特征串。这类脚本常被塞进应用内嵌网页里，打开页面就偷偷用你的手机挖矿，该服务早已关停，正规应用不会再内置它；命中只说明包里含此特征串，请结合应用来源判断",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "id": "content-011",
+   "level": "HIGH",
+   "featureString": "my/app/client",
+   "title": "AndroRAT 远控框架特征（内容签名）",
+   "reason": "内容签名命中：应用包代码里出现老牌远控框架 AndroRAT 客户端的类路径特征。用它生成的应用能被远程操控、偷拍偷录、窃取短信，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "id": "content-012",
+   "level": "HIGH",
+   "featureString": "rageagainstthecage",
+   "title": "提权漏洞利用特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现老牌安卓提权漏洞利用工具 RageAgainstTheCage 的特征串。内置提权利用的应用会试图拿到系统最高权限以便抗卸载、窃取数据，正规应用不会内置漏洞利用代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "id": "content-013",
+   "level": "HIGH",
+   "type": "content_signature",
+   "featureString": "sandrorat",
+   "title": "SandroRAT 远控特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现远控木马 SandroRAT 的家族特征串。SandroRAT 是 DroidJack 的衍生远控，能远程操控手机、窃取短信与聊天记录、偷拍偷录，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断"
+  },
+  {
+   "enabled": true,
+   "id": "content-014",
+   "level": "HIGH",
+   "type": "content_signature",
+   "featureString": "omnirat",
+   "title": "OmniRAT 远控特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现远控工具 OmniRAT 的家族特征串。OmniRAT 是公开售卖多年的跨平台远控，被装上后对方能实时看屏幕、定位、录音，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断"
+  },
+  {
+   "enabled": true,
+   "id": "content-015",
+   "level": "HIGH",
+   "type": "content_signature",
+   "featureString": "exobot",
+   "title": "ExoBot 银行木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现银行木马 ExoBot 的家族特征串。ExoBot 源码泄露后变种很多，专靠盖屏假冒银行界面、拦截短信验证码偷钱，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断"
+  },
+  {
+   "enabled": true,
+   "id": "content-016",
+   "level": "HIGH",
+   "type": "content_signature",
+   "featureString": "fakeinst",
+   "title": "FakeInst 短信扣费木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现短信扣费木马家族 FakeInst 的特征串。这类木马冒充热门应用，装上后偷偷发付费短信订阅扣费服务，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断"
+  },
+  {
+   "enabled": true,
+   "id": "content-017",
+   "level": "HIGH",
+   "type": "content_signature",
+   "featureString": "triada",
+   "title": "Triada 预装级木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现预装级木马家族 Triada 的特征串。Triada 最早藏在系统固件层，能往其他应用里注入代码、偷短信和聊天记录，后来也以普通安装包形态传播，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断"
+  },
+  {
+   "enabled": true,
+   "id": "content-018",
+   "level": "HIGH",
+   "type": "content_signature",
+   "featureString": "hummingbad",
+   "title": "HummingBad 广告木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现广告木马家族 HummingBad 的特征串。这类木马装上后疯狂弹广告、偷偷下载安装其他应用刷量牟利，还会想办法常驻删不掉，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断"
+  },
+  {
+   "enabled": true,
+   "id": "content-019",
+   "level": "HIGH",
+   "type": "content_signature",
+   "featureString": "cerberus",
+   "title": "Cerberus 银行木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现银行木马家族 Cerberus 的特征串。Cerberus 靠无障碍服务盖屏假冒银行与支付界面、拦截短信验证码偷钱，是租售多年的成熟银行木马，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断"
+  },
+  {
+   "enabled": true,
+   "id": "content-020",
+   "level": "HIGH",
+   "type": "content_signature",
+   "featureString": "flubot",
+   "title": "FluBot 短信蠕虫特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现短信蠕虫家族 FluBot 的特征串。FluBot 冒充快递/语音信箱应用发短信扩散，装上后读取通讯录群发传播、盖屏偷银行信息，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断"
+  }
+ ],
+ "updatedAt": "2026-11-26 16:24:27",
+ "version": 2026112607
+}
