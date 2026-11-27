@@ -1452,8 +1452,44 @@
    "reason": "内容签名命中：应用包代码/资源里出现安卓间谍软件家族 Skygofree 的特征串「skygofree」。Skygofree 是 2017 年底披露的安卓间谍软件，据公开报告自 2014 年起就已活跃，靠伪造运营商升级页面等假落地页传播，装上后利用无障碍服务窃取 WhatsApp 等聊天应用的消息，还能按地理位置自动开启录音、偷拍照片、记录浏览历史与连接过的网络。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
    "title": "Skygofree 间谍软件特征（内容签名）",
    "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "flexispy",
+   "id": "content-109",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现间谍软件 FlexiSpy 的特征串「flexispy」。FlexiSpy 是自 2006 年前后起公开售卖的手机监控软件，常以家长监控、员工监督的名义销售，被各国安全机构归为跟踪软件（stalkerware），靠物理接触目标手机或钓鱼链接装入，装上后能拦截并录制通话、录下环境音、读取短信与聊天应用消息、跟踪 GPS 位置并远程回传，还会隐藏桌面图标让机主难以察觉。这个专名只会出现在该软件样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "FlexiSpy 间谍软件特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "finspy",
+   "id": "content-110",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现间谍软件 FinSpy 的特征串「finspy」。FinSpy 是 Gamma Group 旗下 FinFisher 监控工具的移动端植入体，2019 年卡巴斯基等机构披露了它的安卓新变种，靠钓鱼链接、仿冒应用更新等渠道定向投放，装上后窃取 WhatsApp、Telegram、Signal 等聊天应用的消息与文件，跟踪位置、记录通话并回传设备数据，是专门盯高价值目标的政府级间谍软件。这个专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "FinSpy 间谍软件特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "oscorp",
+   "id": "content-111",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓银行木马家族 Oscorp 的特征串「oscorp」。Oscorp 是 2021 年由意大利 CERT-AGID 披露、Cleafy 等机构跟进分析的安卓银行木马，靠仿冒官方机构的钓鱼站点与链接诱导下载，装上后滥用无障碍服务窃取银行与支付应用的账号凭据、读取短信验证码，还能阻止卸载安全软件并接受远程操控。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "Oscorp 银行木马特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "gingermaster",
+   "id": "content-112",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓木马家族 GingerMaster 的特征串「gingermaster」。GingerMaster 是 2011 年由北卡罗来纳州立大学研究团队披露的安卓木马，被认为是首个利用 Android 2.3（Gingerbread）系统提权漏洞的恶意软件，常被重新打包进仿冒的热门应用里传播，拿到 root 权限后窃取设备与用户信息、下载安装更多恶意载荷并回传数据。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "GingerMaster 木马特征（内容签名）",
+   "type": "content_signature"
   }
  ],
  "updatedAt": "2026-11-27",
- "version": "2026112628"
+ "version": "2026112629"
 }
