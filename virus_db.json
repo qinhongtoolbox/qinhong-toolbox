@@ -1236,8 +1236,44 @@
    "reason": "内容签名命中：应用包代码/资源里出现间谍软件家族 LightSpy 的特征串「lightspy」。LightSpy 是一套模块化的间谍软件，装上后能偷你的位置、通讯录、通话录音、聊天记录和浏览器历史，还能录音、截屏，是专门盯人隐私的监控工具。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
    "enabled": true,
    "featureString": "lightspy"
+  },
+  {
+   "id": "content-085",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "Facestealer 窃号木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现窃号木马家族 Facestealer 的特征串「facestealer」。Facestealer 是专门偷社交账号的窃号木马，盗 Facebook 等账号密码与 Cookie、绕过登录验证接管账号。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "facestealer"
+  },
+  {
+   "id": "content-086",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "CopyBara 远控木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现远控木马家族 CopyBara 的特征串「copybara」。CopyBara 是伪装成热门短视频/剪辑应用传播的安卓远控木马，能读短信、录屏、窃取银行与社交账号信息并远程操控设备。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "copybara"
+  },
+  {
+   "id": "content-087",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "EvilExtractor 远控木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现远控工具家族 EvilExtractor 的特征串「evilextractor」。EvilExtractor 是在黑客论坛公开出售的安卓远控工具，能偷照片、短信、通讯录、浏览器数据并定位设备，常被二次打包进仿冒应用。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "evilextractor"
+  },
+  {
+   "id": "content-088",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "Gustuff 银行木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现银行木马家族 Gustuff 的特征串「gustuff」。Gustuff 是针对银行与支付应用的安卓银行木马，用无障碍服务读屏并模拟点击转账、覆盖假登录页骗取账号密码。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "gustuff"
   }
  ],
  "updatedAt": "2026-11-27",
- "version": "2026112622"
+ "version": "2026112623"
 }
