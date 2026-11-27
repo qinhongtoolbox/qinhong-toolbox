@@ -1,5 +1,5 @@
 {
- "description": "内置病毒库（学习研究用）：包名规则来自 Dr.Web、Check Point、ThreatFabric 等公开威胁情报与 stalkerware 公开 IOC；权限/行为/签名规则为通用组合判定。v1.14 新增实测锁机/破坏样本：终末神明Plus（mio.terminaldeity.plus）。v1.29 新增秦红官方无害测试样本规则（pkg-500，com.study.testsample）。v1.30 新增内容签名规则（content-001，EICAR 标准测试串，扫描 dex 与 assets 内容）。v1.31 内容签名扩充：新增锁机/勒索话术与终末神明家族特征共 4 条（content-002~005），均经阳性样本命中与阴性对照不误报验证。v1.32 内容签名再扩 3 条远控/渗透框架特征（content-006~008：AhMyth、DroidJack、Metasploit 载荷），同样经阳性命中与阴性不误报验证。v1.34 内容签名再扩 4 条代码标识类高置信特征（content-009~012：XMRig 挖矿、CoinHive 网页挖矿、AndroRAT 远控、RageAgainstTheCage 提权利用），同样经阳性命中与阴性不误报验证；启发式新增隐藏图标+无障碍+自启（heur-007）与无障碍+短信读取可疑组合（heur-008）。v1.36 内容签名再扩 4 条代码标识类高置信特征（content-017~020：Triada 预装级木马、HummingBad 广告木马、Cerberus 银行木马、FluBot 短信蠕虫），同样经阳性命中与阴性不误报验证；启发式新增装机分发组合（heur-009）与短信蠕虫画像组合（heur-010），均只报可疑。v1.37 内容签名再扩 4 条代码标识类高置信特征（content-021~024：Anubis、TeaBot、BRATA、SharkBot 银行木马家族），同样经阳性命中与阴性不误报验证；启发式新增通知监听＋无障碍（heur-011）与悬浮窗＋请求安装（heur-012）两条流氓画像组合，均只报可疑。v1.38 内容签名再扩 4 条专名标识类高置信特征（content-025~028：SpyNote 远控、CypherRat 远控生成器、Gigabud 银行木马、ERMAC 银行木马），同样经阳性命中与阴性不误报验证；启发式新增设备管理员＋发短信高危组合（heur-013，主流厂商降一级）与通知监听＋请求安装可疑组合（heur-014）。v1.39 内容签名再扩 4 条专名标识类高置信特征（content-029~032：HookBot、Xenomorph、Vultur、PixPirate 银行木马家族；两家同类弃选并说明：Godfather 本身是常见英文词（教父），正规应用里出现概率不低，误报面大；Zanubis 的特征串包含 Anubis 的特征串，命中必然双报、徒增噪音），同样经阳性命中与阴性不误报验证；启发式新增无障碍＋请求删除应用可疑组合（heur-015）与录音＋开机自启＋隐藏图标窃听画像组合（heur-016，主流厂商降一级）。v1.40 内容签名再扩 4 条专名标识类高置信特征（content-033~036：Crocodilus 银行木马、EventBot 银行木马、TangleBot 短信木马、Ghimob 银行远控木马），同样经阳性命中与阴性不误报验证；启发式新增无障碍＋悬浮窗（heur-017）与通知监听＋短信读取（heur-018）两条可疑组合。v1.43 内容签名再扩 4 条专名标识类高置信特征（content-045~048：GoldPickaxe 人脸窃取木马、ToxicPanda 银行木马、DroidBot 银行木马、SuperCard X NFC 中继盗刷），同样经阳性命中与阴性不误报验证；启发式新增录音＋悬浮窗＋开机自启（heur-023）与请求删除应用＋隐藏图标（heur-024）两条可疑组合。v1.44 内容签名再扩 4 条专名标识类高置信特征（content-049~052：SpyLoan 贷款窃密木马、Goldoson 恶意广告 SDK、SpinOk 间谍 SDK、Snowblind 银行木马），同样经阳性命中与阴性不误报验证；启发式新增悬浮窗＋通知监听＋开机自启（heur-025）与精准定位＋发短信＋隐藏图标（heur-026，主流厂商降一级）两条组合。v1.45 内容签名再扩 4 条专名标识类高置信特征（content-053~056：Xamalicious 木马家族、CraxsRAT 远控木马、BadBazaar 间谍软件、SpyMax 远控木马），同样经阳性命中与阴性不误报验证；启发式新增摄像头＋录音＋隐藏图标（heur-027，主流厂商降一级）与短信读取＋通讯录＋开机自启（heur-028）两条组合。v1.50 内容签名再扩 4 条专名标识类高置信特征（content-069~072：MoqHao 远控、DroidKungFu、Lotoor 提权利用、Necro 下载器），同样经阳性命中与阴性不误报验证；启发式新增精准定位＋录音＋隐藏图标（heur-033，主流厂商降一级）与请求安装＋开机自启＋隐藏图标（heur-034）两条组合。弃选说明：SparkCat 与已有 sparkkitty 签名同族重复；Sova、Chameleon、Joker 均为常见英文词，误报面大；Harly 特征串过短。v1.53 内容签名再扩 4 条专名标识类高置信特征（content-081~084：BianLian 勒索软件、SoumniBot 银行木马、VajraSpy 远控木马、LightSpy 间谍软件），同样经阳性命中与阴性不误报验证；启发式新增通知监听＋请求删除应用＋开机自启（heur-039）与摄像头＋悬浮窗＋隐藏图标（heur-040）两条组合。弃选说明：PixPirate 与 Gigabud 已分别由 content-032、content-027 收录，重复弃选。v1.55 内容签名再扩 4 条专名标识类高置信特征（content-089~092：RoamingMantis 远控钓鱼木马、Autolycos 订阅欺诈木马、Geinimi 木马、DroidDream 远控木马），同样经阳性命中与阴性不误报验证；启发式新增通话记录＋发短信＋隐藏图标（heur-043）与摄像头＋开机自启＋隐藏图标（heur-044）两条组合。弃选说明：BrasDex 的特征串 brasdex 已由 content-041 收录、完全重复，命中必然双报，重复弃选，改用备用候选 Geinimi。v1.56 内容签名再扩 4 条真实历史家族特征（content-093~096：XHelper 顽固木马、Medusa 银行木马、Hydra 银行木马、SOVA 银行木马），同样经阳性命中与阴性不误报验证；启发式新增读取日历＋精准定位＋隐藏图标（heur-045）与拨打电话＋发短信＋开机自启（heur-046）两条组合。弃选说明：SpyNote、ERMAC、SharkBot、BRATA、EventBot、Anatsa、Xenomorph、SpinOK 等候选家族的特征串均已被既有规则收录（spynote/ermac/sharkbot 等整串或其前缀串），命中必然双报，全部弃选。",
+ "description": "内置病毒库（学习研究用）：包名规则来自 Dr.Web、Check Point、ThreatFabric 等公开威胁情报与 stalkerware 公开 IOC；权限/行为/签名规则为通用组合判定。v1.14 新增实测锁机/破坏样本：终末神明Plus（mio.terminaldeity.plus）。v1.29 新增秦红官方无害测试样本规则（pkg-500，com.study.testsample）。v1.30 新增内容签名规则（content-001，EICAR 标准测试串，扫描 dex 与 assets 内容）。v1.31 内容签名扩充：新增锁机/勒索话术与终末神明家族特征共 4 条（content-002~005），均经阳性样本命中与阴性对照不误报验证。v1.32 内容签名再扩 3 条远控/渗透框架特征（content-006~008：AhMyth、DroidJack、Metasploit 载荷），同样经阳性命中与阴性不误报验证。v1.34 内容签名再扩 4 条代码标识类高置信特征（content-009~012：XMRig 挖矿、CoinHive 网页挖矿、AndroRAT 远控、RageAgainstTheCage 提权利用），同样经阳性命中与阴性不误报验证；启发式新增隐藏图标+无障碍+自启（heur-007）与无障碍+短信读取可疑组合（heur-008）。v1.36 内容签名再扩 4 条代码标识类高置信特征（content-017~020：Triada 预装级木马、HummingBad 广告木马、Cerberus 银行木马、FluBot 短信蠕虫），同样经阳性命中与阴性不误报验证；启发式新增装机分发组合（heur-009）与短信蠕虫画像组合（heur-010），均只报可疑。v1.37 内容签名再扩 4 条代码标识类高置信特征（content-021~024：Anubis、TeaBot、BRATA、SharkBot 银行木马家族），同样经阳性命中与阴性不误报验证；启发式新增通知监听＋无障碍（heur-011）与悬浮窗＋请求安装（heur-012）两条流氓画像组合，均只报可疑。v1.38 内容签名再扩 4 条专名标识类高置信特征（content-025~028：SpyNote 远控、CypherRat 远控生成器、Gigabud 银行木马、ERMAC 银行木马），同样经阳性命中与阴性不误报验证；启发式新增设备管理员＋发短信高危组合（heur-013，主流厂商降一级）与通知监听＋请求安装可疑组合（heur-014）。v1.39 内容签名再扩 4 条专名标识类高置信特征（content-029~032：HookBot、Xenomorph、Vultur、PixPirate 银行木马家族；两家同类弃选并说明：Godfather 本身是常见英文词（教父），正规应用里出现概率不低，误报面大；Zanubis 的特征串包含 Anubis 的特征串，命中必然双报、徒增噪音），同样经阳性命中与阴性不误报验证；启发式新增无障碍＋请求删除应用可疑组合（heur-015）与录音＋开机自启＋隐藏图标窃听画像组合（heur-016，主流厂商降一级）。v1.40 内容签名再扩 4 条专名标识类高置信特征（content-033~036：Crocodilus 银行木马、EventBot 银行木马、TangleBot 短信木马、Ghimob 银行远控木马），同样经阳性命中与阴性不误报验证；启发式新增无障碍＋悬浮窗（heur-017）与通知监听＋短信读取（heur-018）两条可疑组合。v1.43 内容签名再扩 4 条专名标识类高置信特征（content-045~048：GoldPickaxe 人脸窃取木马、ToxicPanda 银行木马、DroidBot 银行木马、SuperCard X NFC 中继盗刷），同样经阳性命中与阴性不误报验证；启发式新增录音＋悬浮窗＋开机自启（heur-023）与请求删除应用＋隐藏图标（heur-024）两条可疑组合。v1.44 内容签名再扩 4 条专名标识类高置信特征（content-049~052：SpyLoan 贷款窃密木马、Goldoson 恶意广告 SDK、SpinOk 间谍 SDK、Snowblind 银行木马），同样经阳性命中与阴性不误报验证；启发式新增悬浮窗＋通知监听＋开机自启（heur-025）与精准定位＋发短信＋隐藏图标（heur-026，主流厂商降一级）两条组合。v1.45 内容签名再扩 4 条专名标识类高置信特征（content-053~056：Xamalicious 木马家族、CraxsRAT 远控木马、BadBazaar 间谍软件、SpyMax 远控木马），同样经阳性命中与阴性不误报验证；启发式新增摄像头＋录音＋隐藏图标（heur-027，主流厂商降一级）与短信读取＋通讯录＋开机自启（heur-028）两条组合。v1.50 内容签名再扩 4 条专名标识类高置信特征（content-069~072：MoqHao 远控、DroidKungFu、Lotoor 提权利用、Necro 下载器），同样经阳性命中与阴性不误报验证；启发式新增精准定位＋录音＋隐藏图标（heur-033，主流厂商降一级）与请求安装＋开机自启＋隐藏图标（heur-034）两条组合。弃选说明：SparkCat 与已有 sparkkitty 签名同族重复；Sova、Chameleon、Joker 均为常见英文词，误报面大；Harly 特征串过短。v1.53 内容签名再扩 4 条专名标识类高置信特征（content-081~084：BianLian 勒索软件、SoumniBot 银行木马、VajraSpy 远控木马、LightSpy 间谍软件），同样经阳性命中与阴性不误报验证；启发式新增通知监听＋请求删除应用＋开机自启（heur-039）与摄像头＋悬浮窗＋隐藏图标（heur-040）两条组合。弃选说明：PixPirate 与 Gigabud 已分别由 content-032、content-027 收录，重复弃选。v1.55 内容签名再扩 4 条专名标识类高置信特征（content-089~092：RoamingMantis 远控钓鱼木马、Autolycos 订阅欺诈木马、Geinimi 木马、DroidDream 远控木马），同样经阳性命中与阴性不误报验证；启发式新增通话记录＋发短信＋隐藏图标（heur-043）与摄像头＋开机自启＋隐藏图标（heur-044）两条组合。弃选说明：BrasDex 的特征串 brasdex 已由 content-041 收录、完全重复，命中必然双报，重复弃选，改用备用候选 Geinimi。v1.56 内容签名再扩 4 条真实历史家族特征（content-093~096：XHelper 顽固木马、Medusa 银行木马、Hydra 银行木马、SOVA 银行木马），同样经阳性命中与阴性不误报验证；启发式新增读取日历＋精准定位＋隐藏图标（heur-045）与拨打电话＋发短信＋开机自启（heur-046）两条组合。弃选说明：SpyNote、ERMAC、SharkBot、BRATA、EventBot、Anatsa、Xenomorph、SpinOK 等候选家族的特征串均已被既有规则收录（spynote/ermac/sharkbot 等整串或其前缀串），命中必然双报，全部弃选。v1.58 内容签名再扩 4 条专名标识类高置信特征（content-101~104：Gooligan 提权木马、DressCode 僵尸网络木马、FalseGuide 僵尸网络木马、MazarBot 远控木马），同样经阳性命中与阴性不误报验证；启发式新增查询全部应用＋请求安装应用＋隐藏图标（heur-049）与后台定位＋摄像头＋开机自启（heur-050）两条组合。弃选说明：Triada、HummingBad 的特征串已被既有签名规则收录，命中必然双报，弃选。",
  "rules": [
   {
    "enabled": true,
@@ -1380,8 +1380,44 @@
    "reason": "内容签名命中：应用包代码/资源里出现银行木马家族 Coper 的特征串「coper」。Coper 是 2021 年出现的安卓银行木马，被认为是后来 Octo 银行木马的前身，主要盯拉丁美洲的银行应用，冒充银行官方应用传播，装上后滥用无障碍服务远程操控设备、在银行界面上覆盖钓鱼页面骗取凭据，还能拦截短信并试图关掉系统的安全防护。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
    "enabled": true,
    "featureString": "coper"
+  },
+  {
+   "id": "content-101",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "Gooligan 提权木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓木马家族 Gooligan 的特征串「gooligan」。Gooligan 是 2016 年披露的安卓恶意软件家族，靠仿冒热门应用传播，装上后利用一键 Root 漏洞获取设备最高权限，再窃取 Google 账号的登录令牌，进而访问 Gmail、云端硬盘与相册等数据，受感染设备还会被拉去刷应用下载量与好评，公开报告称其感染超过一百万台设备。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "gooligan"
+  },
+  {
+   "id": "content-102",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "DressCode 僵尸网络木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓木马家族 DressCode 的特征串「dresscode」。DressCode 是 2016 年披露的安卓恶意软件家族，曾藏身在应用商店上架的游戏与主题应用里，装上后与远程服务器建立隐蔽通道，把受感染设备编成僵尸网络，可被用来发起流量攻击、刷广告点击，还能借设备通道窥探同一局域网里的其他设备。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "dresscode"
+  },
+  {
+   "id": "content-103",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "FalseGuide 僵尸网络木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓木马家族 FalseGuide 的特征串「falseguide」。FalseGuide 是 2017 年披露的安卓僵尸网络木马，伪装成热门游戏的攻略指南应用在官方商店传播，装上后在后台静默下载并运行额外的恶意模块，把设备编入僵尸网络，可被远程操控发起 DDoS 攻击或群发推广，公开报告估计其感染设备在五十万到两百万台之间。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "falseguide"
+  },
+  {
+   "id": "content-104",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "MazarBot 远控木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓远控木马家族 MazarBot 的特征串「mazarbot」。MazarBot 是 2016 年出现的安卓远控木马，靠带链接的垃圾短信诱导安装，装上后通过 Tor 匿名网络与控制端通信，能读短信、打电话、录下设备信息并回传，还能擦除设备数据，是早期把 Tor 用进安卓木马的代表家族。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "mazarbot"
   }
  ],
  "updatedAt": "2026-11-27",
- "version": "2026112626"
+ "version": "2026112627"
 }
