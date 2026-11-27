@@ -1,6 +1,6 @@
 {
-  "downloadUrl": "https://qinhongtoolbox.github.io/qinhong-toolbox/",
-  "latestVersionCode": 52,
-  "message": "秦红工具箱 v1.51：工具增至 162 个、小游戏 60 个、病毒库 125 条（2026112620）。应急处置再加 10 种打开方式（亮屏、息屏、手机翻面、拿起手机、横屏、充电满电、勿扰打开等），累计 30 种，新加的默认关闭，去应急设置里按需开启。防护模块同步升到 v1.3。直接覆盖安装即可，账号、记录、视频都不会丢，千万不要先卸载再装。",
-  "minVersionCode": 51
+  "latestVersionCode": 53,
+  "minVersionCode": 52,
+  "latestVersionName": "1.52.0-study",
+  "downloadUrl": "https://qinhongtoolbox.github.io/qinhong-toolbox/"
 }
