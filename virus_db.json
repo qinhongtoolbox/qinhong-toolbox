@@ -1416,8 +1416,44 @@
    "reason": "内容签名命中：应用包代码/资源里出现安卓远控木马家族 MazarBot 的特征串「mazarbot」。MazarBot 是 2016 年出现的安卓远控木马，靠带链接的垃圾短信诱导安装，装上后通过 Tor 匿名网络与控制端通信，能读短信、打电话、录下设备信息并回传，还能擦除设备数据，是早期把 Tor 用进安卓木马的代表家族。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
    "enabled": true,
    "featureString": "mazarbot"
+  },
+  {
+   "enabled": true,
+   "featureString": "escobar",
+   "id": "content-105",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓银行木马家族 Escobar 的特征串「escobar」。Escobar 是 2022 年披露的安卓银行木马（由更早的 Aberebot 家族演化而来），常伪装成杀毒软件等工具应用传播，装上后滥用无障碍服务监控数百款银行与金融应用、窃取谷歌验证器里的一次性验证码，还能录音、拦截短信并远程操控设备。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "Escobar 银行木马特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "dawdropper",
+   "id": "content-106",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓投放器家族 DawDropper 的特征串「dawdropper」。DawDropper 是 2022 年披露的安卓投放器（dropper）家族，曾藏身在官方商店上架的录音、二维码扫描等工具应用里，装上后先装作正常应用潜伏，再从远程服务器下载并投放 Octo、Hydra、ERMAC、TeaBot 等银行木马载荷，靠分阶段投放躲过商店审核。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "DawDropper 投放器木马特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "chrysaor",
+   "id": "content-107",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓间谍软件家族 Chrysaor 的特征串「chrysaor」。Chrysaor 是 2017 年由谷歌与 Lookout 联合披露的安卓间谍软件，被视为监听软件 Pegasus 的安卓对应版本，靠定向钓鱼链接传播，装上后窃取短信、通话记录、邮件与聊天内容，还能远程录音、拍照、截取位置并实时回传，是一类专门盯高价值目标的间谍软件。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "Chrysaor 间谍软件特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "skygofree",
+   "id": "content-108",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓间谍软件家族 Skygofree 的特征串「skygofree」。Skygofree 是 2017 年底披露的安卓间谍软件，据公开报告自 2014 年起就已活跃，靠伪造运营商升级页面等假落地页传播，装上后利用无障碍服务窃取 WhatsApp 等聊天应用的消息，还能按地理位置自动开启录音、偷拍照片、记录浏览历史与连接过的网络。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "Skygofree 间谍软件特征（内容签名）",
+   "type": "content_signature"
   }
  ],
  "updatedAt": "2026-11-27",
- "version": "2026112627"
+ "version": "2026112628"
 }
