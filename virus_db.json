@@ -1128,8 +1128,44 @@
    "reason": "内容签名命中：应用包代码/资源里出现Necro 下载器木马（卡巴斯基披露、曾混进应用商店的隐写下载器家族）的特异类路径特征串「necro.loader.dropper.module」。这是一串带家族专名与内部模块名的长特征串，只会出现在该家族样本或其生成器打包的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
    "enabled": true,
    "featureString": "necro.loader.dropper.module"
+  },
+  {
+   "id": "content-073",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "Brokewell 银行木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现银行木马家族 Brokewell 的特征串「brokewell」。Brokewell 是 2024 年由 ThreatFabric 披露的安卓银行木马，常冒充 Chrome 浏览器更新投放，靠无障碍服务偷银行与支付账户、记录操作并远程操控设备。这个家族专名只会出现在该家族样本或其生成器打包的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "brokewell"
+  },
+  {
+   "id": "content-074",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "BingoMod 远控木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现 BingoMod 远控木马（2024 年 Cleafy 披露的 Android 远控，带实时传屏、自动转账与防分析自毁）的家族专名特征串「bingomod」。这个名字是该家族的专名，只会出现在该家族样本或其生成器打包的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "bingomod"
+  },
+  {
+   "id": "content-075",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "Albiriox 远控木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现远控木马家族 Albiriox 的特征串「albiriox」。Albiriox 是 2025 年披露的安卓远控木马（RAT），装上后对方能远程操控手机、实时看屏幕、窃取银行与支付应用里的信息。这个家族专名只会出现在该家族样本或其生成器打包的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "albiriox"
+  },
+  {
+   "id": "content-076",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "MaliBot 银行木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现 MaliBot 银行木马（2022 年 F5 Labs 披露，冒充加密货币钱包与浏览器投放、窃取银行与钱包凭证）的家族专名特征串「malibot」。这个名字是该家族的专名，只会出现在该家族样本或其生成器打包的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "malibot"
   }
  ],
  "updatedAt": "2026-11-27",
- "version": "2026112619"
+ "version": "2026112620"
 }
