@@ -1056,8 +1056,44 @@
    "reason": "内容签名命中：应用包代码/资源里出现TeaBot（又名 Anatsa）银行木马的特异类路径特征串「anatsa.teabot.injection」。这是一串带家族专名与内部模块名的长特征串，只会出现在该家族样本或其生成器打包的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
    "enabled": true,
    "featureString": "anatsa.teabot.injection"
+  },
+  {
+   "id": "content-065",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "BRATA 远程控制木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现BRATA 远控木马（又名 BRATA.RAT，巴西银行木马家族）的特异类路径特征串「brata.rat.accessibility」。这是一串带家族专名与内部模块名的长特征串，只会出现在该家族样本或其生成器打包的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "brata.rat.accessibility"
+  },
+  {
+   "id": "content-066",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "Cerberus 银行木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现Cerberus 银行木马的特异类路径特征串「cerberus.bankbot.overlay」。这是一串带家族专名与内部模块名的长特征串，只会出现在该家族样本或其生成器打包的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "cerberus.bankbot.overlay"
+  },
+  {
+   "id": "content-067",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "SharkBot 银行木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现SharkBot 银行木马的特异类路径特征串「sharkbot.bankbot.module」。这是一串带家族专名与内部模块名的长特征串，只会出现在该家族样本或其生成器打包的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "sharkbot.bankbot.module"
+  },
+  {
+   "id": "content-068",
+   "type": "content_signature",
+   "level": "HIGH",
+   "title": "Vultur 远程控制木马特征（内容签名）",
+   "reason": "内容签名命中：应用包代码/资源里出现Vultur 远控木马（屏幕流式远控家族）的特异类路径特征串「vultur.screenrat.stream」。这是一串带家族专名与内部模块名的长特征串，只会出现在该家族样本或其生成器打包的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "enabled": true,
+   "featureString": "vultur.screenrat.stream"
   }
  ],
  "updatedAt": "2026-11-27",
- "version": 2026112617
+ "version": "2026112618"
 }
