@@ -1524,8 +1524,44 @@
    "reason": "内容签名命中：应用包代码/资源里出现安卓银行木马家族 BlackRock 的特征串「blackrock」。BlackRock 是 2020 年由 ThreatFabric 披露的银行木马，源自泄露的 Xerxes / LokiBot 代码，常伪装成应用更新或常用应用传播，滥用无障碍服务监视数百款银行、支付与社交应用，覆盖钓鱼界面窃取账号凭据与支付卡信息，还能拦截短信、隐藏通知并接受远程操控。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
    "title": "BlackRock 银行木马特征（内容签名）",
    "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "golddigger",
+   "id": "content-117",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓银行木马家族 GoldDigger 的特征串「golddigger」。GoldDigger 是 2023 年由 Group-IB 披露的银行木马，主要针对越南等亚太地区的银行应用，常伪装成政府服务或银行应用传播，滥用无障碍服务实时监视数十款银行应用界面，窃取账号凭据与余额信息，还能记录虚拟键盘输入并绕过部分银行的反欺诈机制。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "GoldDigger 银行木马特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "mamont",
+   "id": "content-118",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓银行木马家族 Mamont 的特征串「mamont」。Mamont 是 2024 年披露的银行木马，主要经 Telegram 等即时通讯渠道以「照片/视频分享」话术诱导安装，伪装成浏览器或常用工具，窃取银行账号凭据与短信验证码，并能远程操控设备进行转账。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "Mamont 银行木马特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "spylend",
+   "id": "content-119",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓间谍软件家族 SpyLend 的特征串「spylend」。SpyLend 是 2025 年披露的间谍软件，曾混入 Google Play 上的借贷类应用大规模传播，借贷款之名索取通讯录、短信、照片与位置等敏感权限，窃取的数据被用于骚扰与敲诈勒索受害者及其联系人。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "SpyLend 间谍软件特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "sturnus",
+   "id": "content-120",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓银行木马家族 Sturnus 的特征串「sturnus」。Sturnus 是 2025 年由 ThreatFabric 披露的新型银行木马，能实时捕获屏幕内容、覆盖钓鱼界面窃取银行与通讯应用凭据，并具备完整的设备接管能力，可绕过端到端加密通讯的本地显示直接读取聊天内容。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "Sturnus 银行木马特征（内容签名）",
+   "type": "content_signature"
   }
  ],
  "updatedAt": "2026-11-28",
- "version": "2026112630"
+ "version": 2026112631
 }
