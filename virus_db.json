@@ -1632,8 +1632,44 @@
   "reason": "内容签名命中：应用包代码/资源里出现安卓银行木马家族 Riltok 的特征串「riltok」。Riltok 是 2019 年由 Kaspersky 披露的银行木马，最早在俄语地下论坛上出售，后伪装成二手车买卖、招聘求职等生活类应用传播，装上后在银行应用界面上覆盖假登录页骗取凭据，并拦截、转发甚至隐藏银行发来的短信验证码，让用户钱被转走都收不到提醒。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
   "title": "Riltok 银行木马特征（内容签名）",
   "type": "content_signature"
+ },
+ {
+  "enabled": true,
+  "featureString": "fleckpe",
+  "id": "content-129",
+  "level": "HIGH",
+  "reason": "内容签名命中：应用包代码/资源里出现安卓订阅木马家族 Fleckpe 的特征串「fleckpe」。Fleckpe 是 2023 年由 Kaspersky 披露的订阅木马，主要藏在 Google Play 上的图片编辑、壁纸等应用里传播，装上后在后台偷偷打开付费订阅页面、自动填入用户手机号并拦截确认用的短信验证码，让用户在完全不知情的情况下被订阅付费服务、话费被悄悄扣走。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+  "title": "Fleckpe 订阅木马特征（内容签名）",
+  "type": "content_signature"
+ },
+ {
+  "enabled": true,
+  "featureString": "spyagent",
+  "id": "content-130",
+  "level": "HIGH",
+  "reason": "内容签名命中：应用包代码/资源里出现安卓间谍软件家族 SpyAgent 的特征串「spyagent」。SpyAgent 是 2024 年由 McAfee 披露的间谍软件，伪装成银行、政府机构等官方应用，经钓鱼短信与仿冒网站传播，装上后用 OCR 扫描手机里的截图与照片、专门搜找加密货币钱包的助记词，还窃取短信、通讯录与设备信息回传服务器，助记词一旦被偷走，钱包里的资产会被直接转走。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+  "title": "SpyAgent 间谍软件特征（内容签名）",
+  "type": "content_signature"
+ },
+ {
+  "enabled": true,
+  "featureString": "wyrmspy",
+  "id": "content-131",
+  "level": "HIGH",
+  "reason": "内容签名命中：应用包代码/资源里出现安卓间谍软件家族 WyrmSpy 的特征串「wyrmspy」。WyrmSpy 是 2023 年由 Lookout 披露的间谍软件，被指与 APT41 组织有关，伪装成安卓系统应用与安全应用传播，装上后窃取短信、通话记录、位置、照片与文件，能录音、拍照，还会尝试获取 root 权限把自己扎得更深，窃取的数据全部回传到攻击者的服务器。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+  "title": "WyrmSpy 间谍软件特征（内容签名）",
+  "type": "content_signature"
+ },
+ {
+  "enabled": true,
+  "featureString": "bonespy",
+  "id": "content-132",
+  "level": "HIGH",
+  "reason": "内容签名命中：应用包代码/资源里出现安卓间谍软件家族 BoneSpy 的特征串「bonespy」。BoneSpy 是 2024 年由 Lookout 披露的间谍软件，被指由俄罗斯 Turla 组织使用，脱胎于老牌远控工具 DroidJack，伪装成 Telegram、Samsung Knox 等应用传播，装上后监控短信、通话、位置与浏览记录，能录音、截屏并窃取设备上的文件，长期潜伏监视特定目标。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+  "title": "BoneSpy 间谍软件特征（内容签名）",
+  "type": "content_signature"
  }
  ],
  "updatedAt": "2026-11-28",
- "version": 2026112633
+ "version": 2026112634
 }
