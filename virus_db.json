@@ -1597,79 +1597,115 @@
    "title": "Antidot 银行木马特征（内容签名）",
    "type": "content_signature"
   },
- {
-  "enabled": true,
-  "featureString": "ngate",
-  "id": "content-125",
-  "level": "HIGH",
-  "reason": "内容签名命中：应用包代码/资源里出现安卓银行木马家族 NGate 的特征串「ngate」。NGate 是 2024 年由 ESET 披露的银行木马，脱胎于学术界的 NFCGate 研究工具，攻击者诱导受害人安装一端应用读取银行卡的 NFC 数据，再实时中继到攻击者手里的另一台手机上冒充这张卡刷卡消费，受害人往往是被假银行客服或钓鱼短信一步步哄着装上的。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
-  "title": "NGate 银行木马特征（内容签名）",
-  "type": "content_signature"
- },
- {
-  "enabled": true,
-  "featureString": "ginp",
-  "id": "content-126",
-  "level": "HIGH",
-  "reason": "内容签名命中：应用包代码/资源里出现安卓银行木马家族 Ginp 的特征串「ginp」。Ginp 是 2019 年由 Kaspersky 与 ThreatFabric 等机构披露的银行木马，常伪装成 Google Play、Adobe Flash 等系统更新或常用应用更新传播，装上后在数百款银行与支付应用的界面上覆盖假登录页骗取账号密码，还能拦截、隐藏短信验证码并冒充用户回复短信。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
-  "title": "Ginp 银行木马特征（内容签名）",
-  "type": "content_signature"
- },
- {
-  "enabled": true,
-  "featureString": "mysterybot",
-  "id": "content-127",
-  "level": "HIGH",
-  "reason": "内容签名命中：应用包代码/资源里出现安卓银行木马家族 MysteryBot 的特征串「mysterybot」。MysteryBot 是 2018 年由 ThreatFabric 披露的银行木马，把银行木马、键盘记录、勒索锁屏与远控功能凑在一个包里，常借钓鱼链接与仿冒应用传播，装上后覆盖假登录页窃取银行凭据、记录每一次按键，还能远程操控设备、加密文件勒索。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
-  "title": "MysteryBot 银行木马特征（内容签名）",
-  "type": "content_signature"
- },
- {
-  "enabled": true,
-  "featureString": "riltok",
-  "id": "content-128",
-  "level": "HIGH",
-  "reason": "内容签名命中：应用包代码/资源里出现安卓银行木马家族 Riltok 的特征串「riltok」。Riltok 是 2019 年由 Kaspersky 披露的银行木马，最早在俄语地下论坛上出售，后伪装成二手车买卖、招聘求职等生活类应用传播，装上后在银行应用界面上覆盖假登录页骗取凭据，并拦截、转发甚至隐藏银行发来的短信验证码，让用户钱被转走都收不到提醒。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
-  "title": "Riltok 银行木马特征（内容签名）",
-  "type": "content_signature"
- },
- {
-  "enabled": true,
-  "featureString": "fleckpe",
-  "id": "content-129",
-  "level": "HIGH",
-  "reason": "内容签名命中：应用包代码/资源里出现安卓订阅木马家族 Fleckpe 的特征串「fleckpe」。Fleckpe 是 2023 年由 Kaspersky 披露的订阅木马，主要藏在 Google Play 上的图片编辑、壁纸等应用里传播，装上后在后台偷偷打开付费订阅页面、自动填入用户手机号并拦截确认用的短信验证码，让用户在完全不知情的情况下被订阅付费服务、话费被悄悄扣走。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
-  "title": "Fleckpe 订阅木马特征（内容签名）",
-  "type": "content_signature"
- },
- {
-  "enabled": true,
-  "featureString": "spyagent",
-  "id": "content-130",
-  "level": "HIGH",
-  "reason": "内容签名命中：应用包代码/资源里出现安卓间谍软件家族 SpyAgent 的特征串「spyagent」。SpyAgent 是 2024 年由 McAfee 披露的间谍软件，伪装成银行、政府机构等官方应用，经钓鱼短信与仿冒网站传播，装上后用 OCR 扫描手机里的截图与照片、专门搜找加密货币钱包的助记词，还窃取短信、通讯录与设备信息回传服务器，助记词一旦被偷走，钱包里的资产会被直接转走。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
-  "title": "SpyAgent 间谍软件特征（内容签名）",
-  "type": "content_signature"
- },
- {
-  "enabled": true,
-  "featureString": "wyrmspy",
-  "id": "content-131",
-  "level": "HIGH",
-  "reason": "内容签名命中：应用包代码/资源里出现安卓间谍软件家族 WyrmSpy 的特征串「wyrmspy」。WyrmSpy 是 2023 年由 Lookout 披露的间谍软件，被指与 APT41 组织有关，伪装成安卓系统应用与安全应用传播，装上后窃取短信、通话记录、位置、照片与文件，能录音、拍照，还会尝试获取 root 权限把自己扎得更深，窃取的数据全部回传到攻击者的服务器。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
-  "title": "WyrmSpy 间谍软件特征（内容签名）",
-  "type": "content_signature"
- },
- {
-  "enabled": true,
-  "featureString": "bonespy",
-  "id": "content-132",
-  "level": "HIGH",
-  "reason": "内容签名命中：应用包代码/资源里出现安卓间谍软件家族 BoneSpy 的特征串「bonespy」。BoneSpy 是 2024 年由 Lookout 披露的间谍软件，被指由俄罗斯 Turla 组织使用，脱胎于老牌远控工具 DroidJack，伪装成 Telegram、Samsung Knox 等应用传播，装上后监控短信、通话、位置与浏览记录，能录音、截屏并窃取设备上的文件，长期潜伏监视特定目标。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
-  "title": "BoneSpy 间谍软件特征（内容签名）",
-  "type": "content_signature"
- }
+  {
+   "enabled": true,
+   "featureString": "ngate",
+   "id": "content-125",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓银行木马家族 NGate 的特征串「ngate」。NGate 是 2024 年由 ESET 披露的银行木马，脱胎于学术界的 NFCGate 研究工具，攻击者诱导受害人安装一端应用读取银行卡的 NFC 数据，再实时中继到攻击者手里的另一台手机上冒充这张卡刷卡消费，受害人往往是被假银行客服或钓鱼短信一步步哄着装上的。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "NGate 银行木马特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "ginp",
+   "id": "content-126",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓银行木马家族 Ginp 的特征串「ginp」。Ginp 是 2019 年由 Kaspersky 与 ThreatFabric 等机构披露的银行木马，常伪装成 Google Play、Adobe Flash 等系统更新或常用应用更新传播，装上后在数百款银行与支付应用的界面上覆盖假登录页骗取账号密码，还能拦截、隐藏短信验证码并冒充用户回复短信。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "Ginp 银行木马特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "mysterybot",
+   "id": "content-127",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓银行木马家族 MysteryBot 的特征串「mysterybot」。MysteryBot 是 2018 年由 ThreatFabric 披露的银行木马，把银行木马、键盘记录、勒索锁屏与远控功能凑在一个包里，常借钓鱼链接与仿冒应用传播，装上后覆盖假登录页窃取银行凭据、记录每一次按键，还能远程操控设备、加密文件勒索。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "MysteryBot 银行木马特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "riltok",
+   "id": "content-128",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓银行木马家族 Riltok 的特征串「riltok」。Riltok 是 2019 年由 Kaspersky 披露的银行木马，最早在俄语地下论坛上出售，后伪装成二手车买卖、招聘求职等生活类应用传播，装上后在银行应用界面上覆盖假登录页骗取凭据，并拦截、转发甚至隐藏银行发来的短信验证码，让用户钱被转走都收不到提醒。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "Riltok 银行木马特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "fleckpe",
+   "id": "content-129",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓订阅木马家族 Fleckpe 的特征串「fleckpe」。Fleckpe 是 2023 年由 Kaspersky 披露的订阅木马，主要藏在 Google Play 上的图片编辑、壁纸等应用里传播，装上后在后台偷偷打开付费订阅页面、自动填入用户手机号并拦截确认用的短信验证码，让用户在完全不知情的情况下被订阅付费服务、话费被悄悄扣走。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "Fleckpe 订阅木马特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "spyagent",
+   "id": "content-130",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓间谍软件家族 SpyAgent 的特征串「spyagent」。SpyAgent 是 2024 年由 McAfee 披露的间谍软件，伪装成银行、政府机构等官方应用，经钓鱼短信与仿冒网站传播，装上后用 OCR 扫描手机里的截图与照片、专门搜找加密货币钱包的助记词，还窃取短信、通讯录与设备信息回传服务器，助记词一旦被偷走，钱包里的资产会被直接转走。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "SpyAgent 间谍软件特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "wyrmspy",
+   "id": "content-131",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓间谍软件家族 WyrmSpy 的特征串「wyrmspy」。WyrmSpy 是 2023 年由 Lookout 披露的间谍软件，被指与 APT41 组织有关，伪装成安卓系统应用与安全应用传播，装上后窃取短信、通话记录、位置、照片与文件，能录音、拍照，还会尝试获取 root 权限把自己扎得更深，窃取的数据全部回传到攻击者的服务器。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "WyrmSpy 间谍软件特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "bonespy",
+   "id": "content-132",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓间谍软件家族 BoneSpy 的特征串「bonespy」。BoneSpy 是 2024 年由 Lookout 披露的间谍软件，被指由俄罗斯 Turla 组织使用，脱胎于老牌远控工具 DroidJack，伪装成 Telegram、Samsung Knox 等应用传播，装上后监控短信、通话、位置与浏览记录，能录音、截屏并窃取设备上的文件，长期潜伏监视特定目标。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "BoneSpy 间谍软件特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "daam",
+   "id": "content-133",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓僵尸网络木马 DAAM 的特征串「daam」。DAAM 是 2023 年由 CloudSEK 披露的安卓远控僵尸网络程序，通过第三方应用市场与钓鱼站点的木马化应用传播，装上后窃取短信、通话记录、联系人与相机照片，带键盘记录，还内置勒索模块能加密文件索要赎金，受害设备会被拉进攻击者的僵尸网络听候指令。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "DAAM 僵尸网络木马特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "caprarat",
+   "id": "content-134",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓远控木马 CapraRAT 的特征串「caprarat」。CapraRAT 是与巴基斯坦背景的 Transparent Tribe（APT36）组织关联的安卓间谍远控，多年持续活动，常伪装成 YouTube、浏览器等热门应用（所谓 CapraTube 活动）通过钓鱼与社交渠道传播，装上后窃取短信、通话记录、联系人与位置，能录音、截屏并上传设备文件，专门针对特定人群长期监视。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "CapraRAT 远控木马特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "canespy",
+   "id": "content-135",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓间谍软件 CaneSpy 的特征串「canespy」。CaneSpy 是 2023 年由卡巴斯基披露的间谍软件，藏身于非官方渠道传播的 WhatsApp 修改版里，靠 Telegram 频道等渠道扩散，设备解锁或开机后即被激活，收集设备标识、联系人、账号信息与外置存储上的文件并回传到攻击者服务器，还会按服务器指令继续作恶。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "CaneSpy 间谍软件特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "wpeeper",
+   "id": "content-136",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓后门 Wpeeper 的特征串「wpeeper」。Wpeeper 是 2024 年由奇安信 XLab 披露的安卓后门程序，伪装成应用商店类应用传播，最大特点是拿被入侵的 WordPress 网站当命令服务器的中转跳板来躲避追踪，装上后收集设备信息与文件清单，能按指令下载执行新载荷、上传指定文件，长期潜伏听候远程控制。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "Wpeeper 后门特征（内容签名）",
+   "type": "content_signature"
+  }
  ],
  "updatedAt": "2026-11-28",
- "version": 2026112634
+ "version": 2026112635
 }
