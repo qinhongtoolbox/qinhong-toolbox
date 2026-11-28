@@ -1776,8 +1776,44 @@
    "reason": "内容签名命中：应用包代码/资源里出现安卓银行木马 AlienBot 的特征串「alienbot」。AlienBot 是 2020 年由 ThreatFabric 披露的安卓银行木马家族（又称 Alien），以恶意软件即服务形式出租，伪装成各类应用传播，装上后滥用无障碍服务远程操控手机、叠加假冒银行登录页、拦截短信与通知里的验证码，还能窃取通讯录与位置。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
    "title": "AlienBot 银行木马特征（内容签名）",
    "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "rafelrat",
+   "id": "content-145",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓远控木马 RafelRAT 的特征串「rafelrat」。RafelRAT 是 2024 年由 Check Point 披露的开源安卓远控木马，最初以开源工具形式公开，后被多个黑产与间谍团伙直接拿去作恶，经仿冒应用和钓鱼页面传播，装上后能窃取短信、通话记录、通讯录和通知内容，还能远程定位、录音、删除文件，并被用来配合勒索与长期监控。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "RafelRAT 远控木马特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "boratrat",
+   "id": "content-146",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓远控木马 BoratRAT 的特征串「boratrat」。BoratRAT 是 2022 年由 Cyble 披露的安卓远控木马，在地下论坛打包出售，把远程控制、勒索加密和 DDoS 攻击三样功能凑在一个应用里，装上后能窃取短信与通讯录、远程录音录屏、盗取账号凭据，还能锁住文件勒索赎金或把手机拉进僵尸网络。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "BoratRAT 远控木马特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "blankbot",
+   "id": "content-147",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓银行木马 BlankBot 的特征串「blankbot」。BlankBot 是 2024 年由 ThreatFabric 披露的安卓银行木马，主要针对土耳其等地的银行用户，伪装成手电筒、二维码扫描等工具应用传播，装上后能窃取银行登录凭据、拦截短信验证码、记录键盘输入、录屏看你的操作，还能锁屏勒索。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "BlankBot 银行木马特征（内容签名）",
+   "type": "content_signature"
+  },
+  {
+   "enabled": true,
+   "featureString": "trickmo",
+   "id": "content-148",
+   "level": "HIGH",
+   "reason": "内容签名命中：应用包代码/资源里出现安卓银行木马 TrickMo 的特征串「trickmo」。TrickMo 是 2020 年由 IBM 安全团队披露的安卓银行木马，是 TrickBot 黑产团伙专门用来绕过双因子认证的手机端组件，经短信与邮件链接传播，装上后能拦截短信验证码、窃取银行一次性密码，还能录屏截屏偷走你的解锁图案和 PIN 码，配合电脑端木马把账户里的钱转走。这个家族专名只会出现在该家族样本或其打包工具生成的代码里，正规应用不会内置它的代码；命中只说明包里含此特征串，请结合应用来源判断",
+   "title": "TrickMo 银行木马特征（内容签名）",
+   "type": "content_signature"
   }
  ],
  "updatedAt": "2026-11-28",
- "version": 2026112637
+ "version": 2026112638
 }
